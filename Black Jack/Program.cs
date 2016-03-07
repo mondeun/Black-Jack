@@ -11,6 +11,8 @@ namespace Black_Jack
         static void Main(string[] args)
         {
             Console.WriteLine("Heej");
+            Console.ReadKey();
+            //test
         }
     }
 }
