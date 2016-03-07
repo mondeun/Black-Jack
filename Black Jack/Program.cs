@@ -10,7 +10,7 @@ namespace Black_Jack
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Heej");
+            Console.WriteLine("Hello from Johan");
             Console.WriteLine("hello from ivan");
             Console.ReadKey();
             //test
