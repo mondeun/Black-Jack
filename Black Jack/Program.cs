@@ -13,6 +13,7 @@ namespace Black_Jack
             Console.WriteLine("Heej");
             Console.ReadKey();
             //test
+            //test2
         }
     }
 }
