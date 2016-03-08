@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Black_Jack
 {
-    class Program
+    class Card
     {
-        static void Main(string[] args)
-        {
-            // TODO 
-        }
     }
 }
