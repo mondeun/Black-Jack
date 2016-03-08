@@ -13,5 +13,18 @@ namespace Black_Jack
         {
 
         }
+        public int CheckHandValue(Card [] hand)
+        {
+            int total = 0;
+            for (int i = 0; i < hand.Length; i++)
+            {
+                /*need to have the card value property
+                as a INTEGER type to be able to calculate 
+                hand value and return it!!*/
+                if (hand[i].Value != 0)
+                    total += hand[i].Value;
+            }
+            return total;
+        }
     }
 }

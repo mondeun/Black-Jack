@@ -11,7 +11,9 @@ namespace Black_Jack
         int Money { get; set; }
         public void MakeMove()
         {
-
+            //in progress
+            //if(<17)
+            //    TakeNewCard()
         }
     }
 }
