@@ -8,5 +8,13 @@ namespace Black_Jack
 {
     class Deck
     {
+        public void Shuffle()
+        {
+
+        }
+        public card GetCard()
+        {
+
+        }
     }
 }
