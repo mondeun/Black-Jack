@@ -20,7 +20,7 @@ namespace Black_Jack
         }
         public override string ToString()
         {
-            return string.Format($"{Suit} {Value}");
+            return string.Format($"{Suit}{Value} ");
         }
     }
 }
