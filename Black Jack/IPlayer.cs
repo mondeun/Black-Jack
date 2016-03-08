@@ -12,6 +12,14 @@ namespace Black_Jack
         
         int Money { get; set; }
 
-        void NextMove();
+        void MakeMove();
+
+        int makeBet(int bet);
+
+        void GiveNewCard(Card card);
+
+        string GetHandString();
+
+        void GivePot(int money);
     }
 }
