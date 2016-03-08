@@ -8,5 +8,11 @@ namespace Black_Jack
 {
     class Dealer:IPlayer
     {
+        Card[] hand { get; set; }
+        int Money { get; set; }
+        public void NextMove()
+        {
+
+        }
     }
 }
