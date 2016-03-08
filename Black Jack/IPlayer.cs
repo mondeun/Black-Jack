@@ -16,10 +16,10 @@ namespace Black_Jack
 
         int makeBet(int bet);
 
-        void GiveNewCard(Card card);
+        void TakeNewCard(Card card);
 
         string GetHandString();
 
-        void GivePot(int money);
+        void TakePot(int money);
     }
 }
