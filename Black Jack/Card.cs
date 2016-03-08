@@ -11,14 +11,16 @@ namespace Black_Jack
 
         public string Suit { get; private set; }
 
-        public string Value { get; set; }
+        public string Value { get; private set; }
         
         public Card(string _suit, string _value)
         {
             this.Suit = _suit;
             this.Value = _value;
         }
-
-
+        public override string ToString()
+        {
+            return string.Format($"{Suit}{Value} ");
+        }
     }
 }
