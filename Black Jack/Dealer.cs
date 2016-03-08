@@ -14,5 +14,21 @@ namespace Black_Jack
         {
 
         }
+        public int MakeBet(int bet)
+        {
+
+        }
+        public void GiveNewCard(Card card)
+        {
+
+        }
+        public string GetHandString()
+        {
+
+        }
+        public void GivePot(int money)
+        {
+
+        }
     }
 }
