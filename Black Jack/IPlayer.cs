@@ -10,7 +10,7 @@ namespace Black_Jack
     {
         void MakeMove();
 
-        int MakeBet(int bet);
+        bool MakeBet(int bet);
 
         void TakeNewCard(Card card);
 
