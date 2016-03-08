@@ -8,5 +8,17 @@ namespace Black_Jack
 {
     class Card
     {
+
+        public string Suit { get; private set; }
+
+        public string Value { get; set; }
+        
+        public Card(string _suit, string _value)
+        {
+            this.Suit = _suit;
+            this.Value = _value;
+        }
+
+
     }
 }
