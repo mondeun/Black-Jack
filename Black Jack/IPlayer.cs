@@ -8,5 +8,10 @@ namespace Black_Jack
 {
     interface IPlayer
     {
+        Card[] hand { get; set; }
+        
+        int Money { get; set; }
+
+        void NextMove();
     }
 }
