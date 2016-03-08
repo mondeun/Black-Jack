@@ -14,7 +14,7 @@ namespace Black_Jack
 
         void MakeMove();
 
-        int makeBet(int bet);
+        int MakeBet(int bet);
 
         void TakeNewCard(Card card);
 
