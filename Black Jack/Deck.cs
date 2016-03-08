@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Black_Jack
 {
-    class HumanPlayer:
+    class Deck
     {
-        
-        
-        //constructor 
     }
 }
