@@ -6,27 +6,10 @@ using System.Threading.Tasks;
 
 namespace Black_Jack
 {
-    class ComputerPlayer : IPlayer
+    class ComputerPlayer : Player
     {
-        Card[] hand { get; set; }
         int Money { get; set; }
-        public void NextMove()
-        {
-
-        }
-        public int MakeBet(int bet)
-        {
-
-        }
-        public void GiveNewCard(Card card)
-        {
-
-        }
-        public string GetHandString()
-        {
-
-        }
-        public void GivePot(int money)
+        public void MakeMove()
         {
 
         }
