@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackJack
+namespace BlackJack.Players
 {
-    public class Dealer : IPlayer
+    public class HumanConsolePlayer : IPlayer
     {
         public Guid Id { get; }
 
         public Hand Hand { get; }
 
-        public Dealer()
+        public HumanConsolePlayer()
         {
             Id = Guid.NewGuid();
             Hand = new Hand();
@@ -20,9 +20,13 @@ namespace BlackJack
 
         public PlayerDecision ProcessDecision(Hand hand)
         {
-            if(BlackJackRules.GethandValue(Hand) >= 17)
+            if (BlackJackRules.GethandValue(Hand) >= 21)
                 return PlayerDecision.Stay;
-            return PlayerDecision.Hit;
+
+            Console.Write("Hit or Stay (h/s)? >> ");
+            var choice = Console.ReadLine();
+
+            return choice == "h" ? PlayerDecision.Hit : PlayerDecision.Stay;
         }
     }
 }
