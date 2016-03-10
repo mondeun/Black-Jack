@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleBlackjack
+namespace BlackJack
 {
     /// <summary>
     /// Apply Rules to a Black Jack game
