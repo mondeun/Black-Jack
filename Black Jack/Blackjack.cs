@@ -57,9 +57,10 @@ namespace BlackJack
             player.Hand.AddCard(deck.HandOutCard());
         }
 
-        private void PlaceBets()
+        public void PlaceBets()
         {
-
+            bank.AddPlayerBet(dealer.Id, player.MakeBet());
+            bank.AddPlayerBet(player.Id,player.MakeBet());
         }
     }
 }

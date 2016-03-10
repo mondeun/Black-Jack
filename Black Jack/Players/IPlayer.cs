@@ -11,6 +11,7 @@ namespace BlackJack.Players
         Guid Id { get; }
 
         Hand Hand { get; }
+        int MakeBet();
 
         PlayerDecision ProcessDecision(Hand hand);
     }

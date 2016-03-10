@@ -21,5 +21,11 @@ namespace BlackJack.Players
         {
             throw new NotImplementedException();
         }
+
+        public int MakeBet()
+        {
+            //TODO: betting process for computer player
+            throw new NotImplementedException();
+        }
     }
 }

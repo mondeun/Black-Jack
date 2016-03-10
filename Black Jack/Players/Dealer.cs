@@ -24,5 +24,11 @@ namespace BlackJack.Players
                 return PlayerDecision.Stay;
             return PlayerDecision.Hit;
         }
+
+        public int MakeBet()
+        {
+            //TODO: betting process for computer player
+            throw new NotImplementedException();
+        }
     }
 }
