@@ -64,7 +64,7 @@ namespace BlackJack
             _cards[card2] = tmpCard;
         }
         
-        public Card ReturnCard()
+        public Card HandOutCard()
         {
                 return _cards[_index++ % 52];
         }

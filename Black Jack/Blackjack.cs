@@ -54,7 +54,7 @@ namespace BlackJack
 
         public void GiveCardTo(IPlayer player, Deck deck)
         {
-            player.Hand.AddCard(deck.ReturnCard());
+            player.Hand.AddCard(deck.HandOutCard());
         }
 
         private void PlaceBets()
