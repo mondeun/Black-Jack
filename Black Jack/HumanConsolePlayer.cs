@@ -6,20 +6,27 @@ using System.Threading.Tasks;
 
 namespace ConsoleBlackjack
 {
-    class ComputerPlayer : IPlayer
+    public class HumanConsolePlayer : IPlayer
     {
         public Guid Id { get; }
 
         public Hand Hand { get; }
 
-        public ComputerPlayer()
+        public HumanConsolePlayer()
         {
             Id = Guid.NewGuid();
             Hand = new Hand();
         }
+
         public PlayerDecision ProcessDecision(Hand hand)
         {
-            throw new NotImplementedException();
+            if (BlackJackRules.GethandValue(Hand) >= 21)
+                return PlayerDecision.Stay;
+
+            Console.Write("Hit or Stay (h/s)? >> ");
+            var choice = Console.ReadLine();
+
+            return choice == "h" ? PlayerDecision.Hit : PlayerDecision.Stay;
         }
     }
 }

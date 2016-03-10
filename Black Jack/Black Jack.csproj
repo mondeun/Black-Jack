@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D687201-6458-44CB-83C5-C6D6709D67C2}</ProjectGuid>
+    <ProjectGuid>{061428F6-9793-49C4-851F-503DC33FF8DF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Black_Jack</RootNamespace>
+    <RootNamespace>Black Jack</RootNamespace>
     <AssemblyName>Black Jack</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -43,22 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackJack.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="Blackjack.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="ComputerPlayer.cs" />
     <Compile Include="Dealer.cs" />
     <Compile Include="Deck.cs" />
-    <Compile Include="HumanPlayer.cs" />
+    <Compile Include="Hand.cs" />
+    <Compile Include="HumanConsolePlayer.cs" />
     <Compile Include="IPlayer.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BlackJackRules.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

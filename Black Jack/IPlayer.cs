@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Black_Jack
+namespace ConsoleBlackjack
 {
-    interface IPlayer
+    public interface IPlayer
     {
-        void MakeMove();
+        Guid Id { get; }
 
-        bool MakeBet(int bet);
+        Hand Hand { get; }
 
-        void TakeNewCard(Card card);
-
-        string GetHandString();
-
-        void TakePot(int money);
+        PlayerDecision ProcessDecision(Hand hand);
     }
 }

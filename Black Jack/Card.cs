@@ -4,23 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Black_Jack
+namespace ConsoleBlackjack
 {
-    class Card
+    public class Card 
     {
+        public string Suite { get; }
 
-        public string Suit { get; private set; }
+        public int Value { get; }
 
-        public string Value { get; private set; }
-        
-        public Card(string _suit, string _value)
+        public bool IsHidden { get; private set; }
+
+        public Card(string suite, int value)
         {
-            this.Suit = _suit;
-            this.Value = _value;
+            Suite = suite;
+            Value = value;
+            IsHidden = false;
         }
+
+        public void ToggleHidden()
+        {
+            IsHidden = !IsHidden;
+        }
+
         public override string ToString()
         {
-            return string.Format($"{Suit}{Value} ");
+            return Value + Suite;
         }
     }
 }

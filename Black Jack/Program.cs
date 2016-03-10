@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Black_Jack
+namespace ConsoleBlackjack
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // TODO 
+            var game = new Blackjack();
+            game.Run();
         }
     }
 }

@@ -4,27 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Black_Jack
+namespace ConsoleBlackjack
 {
-    class Dealer : Player
+    public class Dealer : IPlayer
     {
-        int Money { get; set; }
-        public void MakeMove()
-        {
+        public Guid Id { get; }
 
-        }
-        public int CheckHandValue(Card [] hand)
+        public Hand Hand { get; }
+
+        public Dealer()
         {
-            int total = 0;
-            for (int i = 0; i < hand.Length; i++)
-            {
-                /*need to have the card value property
-                as a INTEGER type to be able to calculate 
-                hand value and return it!!*/
-                if (hand[i].Value != 0)
-                    total += hand[i].Value;
-            }
-            return total;
+            Id = Guid.NewGuid();
+            Hand = new Hand();
+        }
+
+        public PlayerDecision ProcessDecision(Hand hand)
+        {
+            if(BlackJackRules.GethandValue(Hand) >= 17)
+                return PlayerDecision.Stay;
+            return PlayerDecision.Hit;
         }
     }
 }

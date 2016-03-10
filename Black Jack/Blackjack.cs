@@ -4,25 +4,61 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Black_Jack
+namespace ConsoleBlackjack
 {
-    public class BlackJack
+    public enum PlayerDecision
     {
-        private Dealer _dealer;
-        private List<IPlayer> _players;
-        private int pot;
+        Hit,
+        Stay
+    }
 
-        public BlackJack()
+    public class Blackjack
+    {
+        Bank bank = new Bank();
+        Dealer dealer = new Dealer();
+        IPlayer player = new HumanConsolePlayer();
+        Deck deck;
+        bool NoBankrupcy = true;//false when someone is bankrupt
+        
+        public void Run()
         {
-            _dealer = new Dealer();
-            _players = new List<IPlayer>();
-            pot = 0;
+            while(NoBankrupcy)//for as long as theres no bankrupt player, do the loop
+            {
+                Initialize();
+                PlaceBets();
+                InitialDeal();
+
+                PlayerTurn(player);
+                PlayerTurn(dealer);
+            }
+        }
+        private void Initialize()
+        {
+            deck = new Deck();//initializes deck for every new round
+            deck.Shuffle();
+        }
+        private void InitialDeal()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                GiveCardTo(player, deck);
+                GiveCardTo(dealer, deck);
+            }
         }
 
-        public void Initialize() { }
+        public void PlayerTurn(IPlayer player)
+        {
 
-        public void NewRound() { }
+        }
 
-        public void Play() { }
+        public void GiveCardTo(IPlayer player, Deck deck)
+        {
+            player.Hand.AddCard(deck.ReturnCard());
+        }
+
+        private void PlaceBets()
+        {
+
+        }
     }
 }
