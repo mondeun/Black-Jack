@@ -28,7 +28,8 @@ namespace BlackJack
         {
             if (!_balance.ContainsKey(id))
                 _balance.Add(id, money);
-            _balance[id] += money;
+            else
+                _balance[id] += money;
         }
 
         public void RemovePlayer(Guid id)
