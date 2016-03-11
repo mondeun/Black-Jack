@@ -59,8 +59,8 @@ namespace BlackJack
 
         public void PlaceBets()
         {
-            bank.AddPlayerBet(dealer.Id, player.MakeBet());
             bank.AddPlayerBet(player.Id,player.MakeBet());
+            bank.AddPlayerBet(dealer.Id, dealer.MakeBet());
         }
     }
 }

@@ -68,8 +68,5 @@ namespace BlackJack
         {
                 return _cards[_index++ % 52];
         }
-
-
-
     }
 }

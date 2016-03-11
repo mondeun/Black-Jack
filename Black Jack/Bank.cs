@@ -8,8 +8,8 @@ namespace BlackJack
 {
     public class Bank
     {
-        private Dictionary<Guid, int> _bets;
-        private Dictionary<Guid, int> _balance; 
+        private static Dictionary<Guid, int> _bets;
+        private static Dictionary<Guid, int> _balance; 
 
         public Bank()
         {
@@ -39,8 +39,8 @@ namespace BlackJack
             _bets.Clear();
         }
 
-        public int GetPlayerBet(Guid id) => _bets[id];
+        public static int GetPlayerBet(Guid id) => _bets[id];
 
-        public int GetPlayerMoney(Guid id) => _balance[id];
+        public static int GetPlayerMoney(Guid id) => _balance[id];
     }
 }
