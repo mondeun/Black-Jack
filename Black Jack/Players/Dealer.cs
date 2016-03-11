@@ -27,19 +27,15 @@ namespace BlackJack.Players
 
         public int MakeBet()
         {
-            //TODO: betting process for computer player
-            //use banks static method to check his money
-            //and decide how much to bet
             var cash = Bank.GetPlayerMoney(Id);
 
             if (cash <= 50)
                 return 2;
-            else if (cash <= 100)
+            if (cash <= 100)
                 return 5;
-            else if (cash <= 200)
+            if (cash <= 200)
                 return 10;
-            else
-                return 1;
+            return 1;
         }
     }
 }
