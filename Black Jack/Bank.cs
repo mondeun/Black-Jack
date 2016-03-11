@@ -19,12 +19,15 @@ namespace BlackJack
 
         public void AddPlayerBet(Guid id, int bet)
         {
-            _bets.Add(id, bet);
+            if (!_bets.ContainsKey(id))
+                _bets.Add(id, bet);
             _balance[id] -= bet;
         }
 
         public void AddMoneyToPlayer(Guid id, int money)
         {
+            if (!_balance.ContainsKey(id))
+                _balance.Add(id, money);
             _balance[id] += money;
         }
 
