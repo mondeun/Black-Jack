@@ -17,15 +17,43 @@ namespace BlackJack.Players
             Id = Guid.NewGuid();
             Hand = new Hand();
         }
+
         public PlayerDecision ProcessDecision(Hand hand)
         {
-            throw new NotImplementedException();
+            /*TODO: decide if Hand inparameter is 
+            really neccessary inside method*/
+
+            /*ComputerPlayer betting-logic is 
+            based on bet amount and Hand value:*/
+            var handValue = BlackJackRules.GethandValue(Hand);
+
+            if (Bank.GetPlayerBet(Id) > 7)
+            {
+                if (handValue > 16)
+                    return PlayerDecision.Stay;
+                else
+                    return PlayerDecision.Hit;
+            }
+            else
+            {
+                if (handValue > 18)
+                    return PlayerDecision.Stay;
+                else
+                    return PlayerDecision.Hit;
+            }
         }
 
         public int MakeBet()
         {
-            //TODO: betting process for computer player
-            throw new NotImplementedException();
+            var cash = Bank.GetPlayerMoney(Id);
+
+            if (cash <= 20)
+                return 2;
+            if (cash <= 50)
+                return 7;
+            if (cash <= 100)
+                return 10;
+            return 10;
         }
     }
 }
