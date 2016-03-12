@@ -13,17 +13,24 @@ namespace BlackJack.Players
     {
         public static int EvaluateWinner(Dealer dealer, IPlayer player)
         {
+            //TODO: finalize method, have a list<IPlayer> being
+            //evaluated against dealer and deciding winners/losers
+            //against the dealer (not amongst players themselves). 
             return 0;
         }
 
         public static int GethandValue(Hand hand)
         {
-            // TODO apply BJ specific values to sum
-
+            //TODO: implement Ace values 1 and 11
+            //Blackjack specific rules for counting handvalue:
             var sum = 0;
             foreach (var card in hand.Cards)
             {
-                sum += card.Value;
+                //Faces (J,Q,K) have value 10
+                if (card.Value > 10)
+                    sum += 10;
+                else
+                    sum += card.Value;
             }
             return sum;
         }

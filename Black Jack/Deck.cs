@@ -20,29 +20,25 @@ namespace BlackJack
 
         private void Initialize()
         {
-            var cardValue = 1;
+            int count = 0;
 
-            for (int i = 0; i < _cards.Length; i++)
+            for (int i = 0; i < 4; i++)
             {
-                if (cardValue%13 == 0)
-                    cardValue = 0;
-                switch (i)
+                int value = 1;
+                for (int j = 0; j < 13; j++)
                 {
-                    case 0:
-                        _cards[i] = new Card("♣", cardValue);
-                        break;
-                    case 1:
-                        _cards[i] = new Card("♦", cardValue);
-                        break;
-                    case 2:
-                        _cards[i] = new Card("♥", cardValue);
-                        break;
-                    case 3:
-                        _cards[i] = new Card("♠", cardValue);
-                        break;
-                }
+                    if (i == 0)
+                        _cards[count] = new Card("♣", value);
+                    if (i == 1)
+                        _cards[count] = new Card("♦", value);
+                    if (i == 2)
+                        _cards[count] = new Card("♥", value);
+                    if (i == 3)
+                        _cards[count] = new Card("♠", value);
 
-                cardValue++;
+                    value++;
+                    count++;
+                }
             }
         }
 

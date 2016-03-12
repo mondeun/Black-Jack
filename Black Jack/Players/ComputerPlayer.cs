@@ -20,11 +20,13 @@ namespace BlackJack.Players
 
         public PlayerDecision ProcessDecision(Hand hand)
         {
-            /*TODO: decide if Hand inparameter is 
-            really neccessary inside method*/
+            /*
+            TODO: decide if Hand parameter is 
+            neccessary
 
-            /*ComputerPlayer betting-logic is 
-            based on bet amount and Hand value:*/
+            ComputerPlayer betting-logic is 
+            based on bet amount and Hand value:
+            */
             var handValue = BlackJackRules.GethandValue(Hand);
 
             if (Bank.GetPlayerBet(Id) > 7)
