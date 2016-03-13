@@ -11,7 +11,7 @@ namespace BlackJack.Players
         public Guid Id { get; }
 
         public Hand Hand { get; }
-
+        public bool isBankrupt { get; set; }
         public Dealer()
         {
             Id = Guid.NewGuid();

@@ -36,8 +36,32 @@ namespace BlackJack
             else
                 _balance[id] += money;
         }
-
-        public void RemovePlayer(Guid id)
+        public void CheckBalances(Players.Dealer dealer,List<Players.IPlayer> players)
+        {
+            //checks whether anyone is out of cash (incl. dealer)
+            //and if so, sets "isBankrupt" to true
+            foreach(Players.IPlayer playr in players)
+            {
+                if (GetPlayerMoney(playr.Id) == 0)
+                    playr.isBankrupt = true;
+            }
+            if (GetPlayerMoney(dealer.Id) == 0)
+                dealer.isBankrupt = true;
+        }
+        public void ExcludeBankruptPlayers(Players.Dealer dealer,List<Players.IPlayer>players)
+        {
+            //checks whether anyone is "bankrupt (incl. dealer)
+            //and if so, removes everything associated with the player
+            foreach (Players.IPlayer playr in players)
+            {
+                //TODO: also remove broke player from list<IPlayer>
+                if (playr.isBankrupt)
+                    RemovePlayer(playr.Id);
+            }
+            if (dealer.isBankrupt)
+                RemovePlayer(dealer.Id);
+        }
+        private void RemovePlayer(Guid id)
         {
             _bets.Remove(id);
             _balance.Remove(id);
