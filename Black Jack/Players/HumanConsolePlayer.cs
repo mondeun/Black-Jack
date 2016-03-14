@@ -12,6 +12,8 @@ namespace BlackJack.Players
 
         public Hand Hand { get; }
 
+
+
         public HumanConsolePlayer()
         {
             Id = Guid.NewGuid();

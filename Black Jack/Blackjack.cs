@@ -13,53 +13,72 @@ namespace BlackJack
         Stay
     }
 
+    /// <summary>
+    /// Contains standard procedures (during a
+    /// game of blackjack) such as which players 
+    /// are joining a game, cards being dealt, 
+    /// bets being placed, players deciding 
+    /// on hitting or staying etc. 
+    /// </summary>
     public class Blackjack
     {
-        Bank bank = new Bank();
+        Bank bank;
         Dealer dealer = new Dealer();
-        IPlayer player = new HumanConsolePlayer();
+        List<IPlayer> players = new List<IPlayer>();
         Deck deck;
-        bool NoBankrupcy = true;//false when someone is bankrupt
-        
-        public void Run()
-        {
-            while(NoBankrupcy)//for as long as theres no bankrupt player, do the loop
-            {
-                Initialize();
-                PlaceBets();
-                InitialDeal();
 
-                PlayerTurn(player);
-                PlayerTurn(dealer);
-            }
+        public Blackjack()
+        {
+            bank = new Bank();
         }
-        private void Initialize()
+        public void AddPlayer(IPlayer newPlayer)
+        {
+            // TODO add players initial money to avoid keynotfound exception
+            players.Add(newPlayer);
+        }
+        public void Initialize()
         {
             deck = new Deck();//initializes deck for every new round
             deck.Shuffle();
         }
-        private void InitialDeal()
+        public void InitialDeal()
         {
+            // TODO check if method works properly
             for (int i = 0; i < 2; i++)
             {
-                GiveCardTo(player, deck);
+                foreach (IPlayer player in players)
+                {
+                    GiveCardTo(player, deck);
+                }
                 GiveCardTo(dealer, deck);
             }
         }
-
-        public void PlayerTurn(IPlayer player)
+        public void PlayerTurns()
         {
+            // TODO: implement so that players can hit more than once
 
+            //Player: hits or stays
+            foreach (IPlayer player in players)
+            {
+                PlayerDecision playerDecision = player.ProcessDecision(player.Hand);
+                if (playerDecision == PlayerDecision.Hit)
+                    GiveCardTo(player, deck);
+            }
+            //Dealer: hits or stays
+            PlayerDecision dealerDecision = dealer.ProcessDecision(dealer.Hand);
+            if (dealerDecision == PlayerDecision.Hit)
+                GiveCardTo(dealer, deck);
         }
-
         public void GiveCardTo(IPlayer player, Deck deck)
         {
             player.Hand.AddCard(deck.HandOutCard());
         }
-
         public void PlaceBets()
         {
-            bank.AddPlayerBet(player.Id,player.MakeBet());
+            foreach (IPlayer player in players)
+            {
+                bank.AddPlayerBet(player.Id, player.MakeBet());
+            }
             bank.AddPlayerBet(dealer.Id, dealer.MakeBet());
         }
     }
