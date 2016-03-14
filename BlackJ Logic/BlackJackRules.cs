@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace BlackJack.Players
 {
+    public enum Winninghand
+    {
+        Dealer,
+        Player,
+        Draw
+    }
+
     /// <summary>
     /// Apply Rules to a Black Jack game
     /// </summary>
     public class BlackJackRules
     {
-        public enum Winninghand
-        {
-            Dealer,
-            Player,
-            Draw
-        }
-
         public static Winninghand EvaluateWinner(Dealer dealer, IPlayer player)
         {
             var dealerHandValue = GethandValue(dealer.Hand);
             var playerHandValue = GethandValue(player.Hand);
-
+            
             if (dealerHandValue == playerHandValue)
                 return Winninghand.Draw;
 
-            return dealerHandValue < playerHandValue ? Winninghand.Player : Winninghand.Dealer;
+            return playerHandValue > dealerHandValue ? Winninghand.Player : Winninghand.Dealer;
         }
         
         public static int GethandValue(Hand hand)
