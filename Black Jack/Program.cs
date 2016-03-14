@@ -16,8 +16,8 @@ namespace BlackJack
 
             //test of game flow:
             game.Initialize();
-            game.AddPlayer(new HumanConsolePlayer());
-            game.AddPlayer(new ComputerPlayer());
+            game.AddPlayer(new HumanConsolePlayer(),100);
+            game.AddPlayer(new ComputerPlayer(),100);
             game.PlaceBets();
             game.InitialDeal();
             game.PlayerTurns();

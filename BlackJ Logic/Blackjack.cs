@@ -31,7 +31,7 @@ namespace BlackJack
         {
             bank = new Bank();
         }
-        public void AddPlayer(IPlayer newPlayer,int startMoney)
+        public void AddPlayer(IPlayer newPlayer, int startMoney)
         {
             players.Add(newPlayer);
             bank.AddMoneyToPlayer(newPlayer.Id, startMoney);
