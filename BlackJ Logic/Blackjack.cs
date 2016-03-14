@@ -14,11 +14,7 @@ namespace BlackJack
     }
 
     /// <summary>
-    /// Contains standard procedures (during a
-    /// game of blackjack) such as which players 
-    /// are joining a game, cards being dealt, 
-    /// bets being placed, players deciding 
-    /// on hitting or staying etc. 
+    /// external API to handle a game of blackjack
     /// </summary>
     public class Blackjack
     {
@@ -27,16 +23,18 @@ namespace BlackJack
         List<IPlayer> players = new List<IPlayer>();
         Deck deck;
 
-        public Blackjack()
+        public Blackjack(int dealerMoney)
         {
             bank = new Bank();
+            InitializeDeck();
+            bank.AddMoneyToPlayer(dealer.Id, dealerMoney);
         }
-        public void AddPlayer(IPlayer newPlayer)
+        public void AddPlayer(IPlayer newPlayer, int startMoney)
         {
-            // TODO add players initial money to avoid keynotfound exception
             players.Add(newPlayer);
+            bank.AddMoneyToPlayer(newPlayer.Id, startMoney);
         }
-        public void Initialize()
+        public void InitializeDeck()
         {
             deck = new Deck();//initializes deck for every new round
             deck.Shuffle();

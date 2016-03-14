@@ -12,12 +12,11 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            var game = new Blackjack();
+            var game = new Blackjack(100);
 
             //test of game flow:
-            game.Initialize();
-            game.AddPlayer(new HumanConsolePlayer());
-            game.AddPlayer(new ComputerPlayer());
+            game.AddPlayer(new HumanConsolePlayer(), 100);
+            game.AddPlayer(new ComputerPlayer(), 100);
             game.PlaceBets();
             game.InitialDeal();
             game.PlayerTurns();
