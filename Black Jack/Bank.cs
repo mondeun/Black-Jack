@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
+    public enum BetValidity
+    {
+        NotEnoughMoney,
+        BetTooHigh,
+        InvalidBet,
+        Ok
+    }
+
     public class Bank
     {
         private static Dictionary<Guid, int> _bets;
@@ -17,16 +25,22 @@ namespace BlackJack
             _balance= new Dictionary<Guid, int>();
         }
 
-        public void AddPlayerBet(Guid id, int bet)
+        public BetValidity AddPlayerBet(Guid id, int bet)
         {
-            if (_balance[id] < bet)
-                return;
+            // We only add new bets and won't allow changes to existing bets
+            if (_bets.ContainsKey(id))
+                return BetValidity.InvalidBet;
 
-            if (!_bets.ContainsKey(id))
-            {
-                _bets.Add(id, bet);
-                _balance[id] -= bet;
-            }
+            if (_balance[id] <= 0)
+                return BetValidity.NotEnoughMoney;
+
+            if (_balance[id] < bet)
+                return BetValidity.BetTooHigh;
+
+            _bets.Add(id, bet);
+            _balance[id] -= bet;
+
+            return BetValidity.Ok;
         }
 
         public void AddMoneyToPlayer(Guid id, int money)
