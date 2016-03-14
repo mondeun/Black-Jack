@@ -18,22 +18,37 @@ namespace BlackJack
     /// </summary>
     public class Blackjack
     {
+        private Dealer dealer;
+        private List<IPlayer> players;
+        public Dealer Dealer
+        {
+            get { return dealer; }
+        }
+        public List<IPlayer>Players
+        {
+            get { return players; }
+        }
+
         Bank bank;
-        Dealer dealer { get; } = new Dealer();
-        List<IPlayer> players { get; } = new List<IPlayer>();
         Deck deck;
 
-        
-        public void NewRoundInit()
+        public Blackjack(int dealerStartMoney)
+        {
+            bank = new Bank();
+            dealer = new Dealer();
+            bank.AddMoneyToPlayer(dealer.Id, dealerStartMoney);
+            players = new List<IPlayer>();
+        }
+        public void NewRound()
         {
             // only clearing bets and refreshing deck
             bank.ClearBets();
             InitializeDeck();
         }
-        public void NewGameInit()
+        public void NewGame()
         {
             // complete initialize plus removal of players 
-            NewRoundInit();
+            NewRound();
 
             foreach (IPlayer player in players)
             {
@@ -41,16 +56,14 @@ namespace BlackJack
             }
             bank.RemovePlayer(dealer.Id);
         }
-        public Blackjack(int dealerMoney)
-        {
-            bank = new Bank();
-            InitializeDeck();
-            bank.AddMoneyToPlayer(dealer.Id, dealerMoney);
-        }
-        public void AddPlayer(IPlayer newPlayer, int startMoney)
+        public void AddPlayer(IPlayer newPlayer, int startBalance=0)
         {
             players.Add(newPlayer);
-            bank.AddMoneyToPlayer(newPlayer.Id, startMoney);
+            bank.AddMoneyToPlayer(newPlayer.Id, startBalance);
+        }
+        public void AddMoney(IPlayer player,int playerMoney)
+        {
+            bank.AddMoneyToPlayer(player.Id, playerMoney);
         }
         public void InitializeDeck()
         {
