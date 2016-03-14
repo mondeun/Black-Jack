@@ -13,8 +13,6 @@ namespace BlackJack
 
         public Hand Hand { get; }
 
-
-
         public HumanConsolePlayer()
         {
             Id = Guid.NewGuid();
@@ -35,20 +33,22 @@ namespace BlackJack
         public int MakeBet()
         {
             //Betting process for human players:
-            bool isInvalid = true;
-            int bet = 0;
+            var invalidBet = true;
+            var bet = 0;
 
-            while (isInvalid)
+            do
             {
                 Console.Write("Enter Bet (1-10): ");
-                bet = int.Parse(Console.ReadLine());
 
+                while (!int.TryParse(Console.ReadLine(), out bet))
+                    Console.WriteLine("Please enter a bet between 1-10: ");
                 if (bet < 1 || bet > 10)
-                    Console.WriteLine("Invalid bet");
+                    Console.WriteLine("Bet not accepted. Place a between 1-10: ");
                 else
-                    isInvalid = false;
-            }
-            Console.WriteLine("Bet valid");
+                    invalidBet = false;
+            } while (invalidBet);
+
+            Console.WriteLine("Placed a bet of {0}", bet);
             return bet;
         }
     }
