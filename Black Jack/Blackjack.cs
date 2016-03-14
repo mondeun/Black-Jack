@@ -59,14 +59,16 @@ namespace BlackJack
         }
         public void PlayerTurns()
         {
-            //Players: hit or stay
+            //TODO: implement so that players can hit more than once
+
+            //Player: hits or stays
             foreach (IPlayer playr in players)
             {
                 PlayerDecision playerDecision = playr.ProcessDecision(playr.Hand);
                 if (playerDecision == PlayerDecision.Hit)
                     GiveCardTo(playr, deck);
             }
-            //Dealer: hit or stay
+            //Dealer: hits or stays
             PlayerDecision dealerDecision = dealer.ProcessDecision(dealer.Hand);
             if (dealerDecision == PlayerDecision.Hit)
                 GiveCardTo(dealer, deck);
