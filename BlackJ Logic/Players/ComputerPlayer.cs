@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack.Players
 {
-    class ComputerPlayer : IPlayer
+    public class ComputerPlayer : IPlayer
     {
         public Guid Id { get; }
 
