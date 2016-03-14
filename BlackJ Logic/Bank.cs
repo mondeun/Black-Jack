@@ -51,7 +51,7 @@ namespace BlackJack
                 _balance[id] += money;
         }
         
-        private void RemovePlayer(Guid id)
+        public void RemovePlayer(Guid id)
         {
             _bets.Remove(id);
             _balance.Remove(id);

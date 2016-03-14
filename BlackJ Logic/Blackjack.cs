@@ -19,10 +19,28 @@ namespace BlackJack
     public class Blackjack
     {
         Bank bank;
-        Dealer dealer = new Dealer();
-        List<IPlayer> players = new List<IPlayer>();
+        Dealer dealer { get; } = new Dealer();
+        List<IPlayer> players { get; } = new List<IPlayer>();
         Deck deck;
 
+        
+        public void NewRoundInit()
+        {
+            // only clearing bets and refreshing deck
+            bank.ClearBets();
+            InitializeDeck();
+        }
+        public void NewGameInit()
+        {
+            // complete initialize plus removal of players 
+            NewRoundInit();
+
+            foreach (IPlayer player in players)
+            {
+                bank.RemovePlayer(player.Id);
+            }
+            bank.RemovePlayer(dealer.Id);
+        }
         public Blackjack(int dealerMoney)
         {
             bank = new Bank();
