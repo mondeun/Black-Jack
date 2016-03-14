@@ -11,14 +11,24 @@ namespace BlackJack.Players
     /// </summary>
     public class BlackJackRules
     {
-        public static int EvaluateWinner(Dealer dealer, IPlayer player)
+        public enum Winninghand
         {
-            //TODO: finalize method, have a list<IPlayer> being
-            //evaluated against dealer and deciding winners/losers
-            //against the dealer (not amongst players themselves). 
-            return 0;
+            Dealer,
+            Player,
+            Draw
         }
 
+        public static Winninghand EvaluateWinner(Dealer dealer, IPlayer player)
+        {
+            var dealerHandValue = GethandValue(dealer.Hand);
+            var playerHandValue = GethandValue(player.Hand);
+
+            if (dealerHandValue == playerHandValue)
+                return Winninghand.Draw;
+
+            return dealerHandValue < playerHandValue ? Winninghand.Player : Winninghand.Dealer;
+        }
+        
         public static int GethandValue(Hand hand)
         {
             var sum = 0;
