@@ -43,7 +43,10 @@ namespace BlackJack
                 while (!int.TryParse(Console.ReadLine(), out bet))
                     Console.WriteLine("Please enter a bet between 1-10: ");
                 if (bet < 1 || bet > 10)
+                {
                     Console.WriteLine("Bet not accepted. Place a between 1-10: ");
+                    invalidBet = true;
+                }
                 else
                     invalidBet = false;
             } while (invalidBet);
