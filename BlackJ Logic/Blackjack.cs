@@ -31,10 +31,10 @@ namespace BlackJack
         {
             bank = new Bank();
         }
-        public void AddPlayer(IPlayer newPlayer)
+        public void AddPlayer(IPlayer newPlayer,int startMoney)
         {
-            // TODO add players initial money to avoid keynotfound exception
             players.Add(newPlayer);
+            bank.AddMoneyToPlayer(newPlayer.Id, startMoney);
         }
         public void Initialize()
         {
