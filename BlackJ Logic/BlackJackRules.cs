@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BlackJack.Players
 {
+    /// <summary>
+    /// Who got the winning hand
+    /// </summary>
     public enum Winninghand
     {
         Dealer,
@@ -18,10 +21,16 @@ namespace BlackJack.Players
     /// </summary>
     public class BlackJackRules
     {
-        public static Winninghand EvaluateWinner(Dealer dealer, IPlayer player)
+        /// <summary>
+        /// Decide if the dealer or player win
+        /// </summary>
+        /// <param name="dealer">A dealers hand</param>
+        /// <param name="player">A players hand</param>
+        /// <returns>Who got the winning hand</returns>
+        public static Winninghand EvaluateWinner(Hand dealer, Hand player)
         {
-            var dealerHandValue = GethandValue(dealer.Hand);
-            var playerHandValue = GethandValue(player.Hand);
+            var dealerHandValue = GethandValue(dealer);
+            var playerHandValue = GethandValue(player);
             
             if (dealerHandValue == playerHandValue)
                 return Winninghand.Draw;
@@ -29,6 +38,11 @@ namespace BlackJack.Players
             return playerHandValue > dealerHandValue ? Winninghand.Player : Winninghand.Dealer;
         }
         
+        /// <summary>
+        /// Get a hands value in Black Jack
+        /// </summary>
+        /// <param name="hand">A player hand</param>
+        /// <returns>Value of the given hand</returns>
         public static int GethandValue(Hand hand)
         {
             var sum = 0;
