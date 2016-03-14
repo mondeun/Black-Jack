@@ -22,51 +22,47 @@ namespace BlackJack
     /// </summary>
     public class Blackjack
     {
-        Bank bank = new Bank();
+        Bank bank;
         Dealer dealer = new Dealer();
         List<IPlayer> players = new List<IPlayer>();
         Deck deck;
 
+        public Blackjack()
+        {
+            bank = new Bank();
+        }
         public void AddPlayer(IPlayer newPlayer)
         {
+            // TODO add players initial money to avoid keynotfound exception
             players.Add(newPlayer);
-        }
-        public void InitialCashDistribution(int initialMoney)
-        {
-            foreach(IPlayer playr in players)
-            {
-                bank.AddMoneyToPlayer(playr.Id, initialMoney);
-            }
-            bank.AddMoneyToPlayer(dealer.Id, initialMoney);
         }
         public void Initialize()
         {
             deck = new Deck();//initializes deck for every new round
             deck.Shuffle();
-            bank.ExcludeBankruptPlayers(dealer,players);//removes any broke player for every new round 
         }
         public void InitialDeal()
         {
-            //TODO: check if method works properly
+            // TODO check if method works properly
             for (int i = 0; i < 2; i++)
             {
-                foreach (IPlayer playr in players)
+                foreach (IPlayer player in players)
                 {
-                    GiveCardTo(playr, deck);
+                    GiveCardTo(player, deck);
                 }
                 GiveCardTo(dealer, deck);
             }
         }
         public void PlayerTurns()
         {
-            //TODO: implement so that players can hit more than once
+            // TODO: implement so that players can hit more than once
 
             //Player: hits or stays
-            foreach (IPlayer playr in players)
+            foreach (IPlayer player in players)
             {
-                PlayerDecision playerDecision = playr.ProcessDecision(playr.Hand);
+                PlayerDecision playerDecision = player.ProcessDecision(player.Hand);
                 if (playerDecision == PlayerDecision.Hit)
-                    GiveCardTo(playr, deck);
+                    GiveCardTo(player, deck);
             }
             //Dealer: hits or stays
             PlayerDecision dealerDecision = dealer.ProcessDecision(dealer.Hand);
@@ -79,9 +75,9 @@ namespace BlackJack
         }
         public void PlaceBets()
         {
-            foreach (IPlayer playr in players)
+            foreach (IPlayer player in players)
             {
-                bank.AddPlayerBet(playr.Id, playr.MakeBet());
+                bank.AddPlayerBet(player.Id, player.MakeBet());
             }
             bank.AddPlayerBet(dealer.Id, dealer.MakeBet());
         }

@@ -9,7 +9,7 @@ namespace BlackJack.Players
     class ComputerPlayer : IPlayer
     {
         public Guid Id { get; }
-        public bool isBankrupt { get; set; }
+
         public Hand Hand { get; }
 
         public ComputerPlayer()

@@ -11,7 +11,7 @@ namespace BlackJack.Players
         Guid Id { get; }
 
         Hand Hand { get; }
-        bool isBankrupt { get; set; }
+
 
         int MakeBet();
 

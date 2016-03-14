@@ -12,7 +12,7 @@ namespace BlackJack.Players
 
         public Hand Hand { get; }
 
-        public bool isBankrupt { get; set; }
+
 
         public HumanConsolePlayer()
         {

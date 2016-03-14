@@ -18,7 +18,6 @@ namespace BlackJack
             game.Initialize();
             game.AddPlayer(new HumanConsolePlayer());
             game.AddPlayer(new ComputerPlayer());
-            game.InitialCashDistribution(100);//adding 100$ to all players 
             game.PlaceBets();
             game.InitialDeal();
             game.PlayerTurns();
