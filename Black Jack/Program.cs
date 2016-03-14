@@ -16,9 +16,14 @@ namespace BlackJack
             var game = new Blackjack(500);
             game.InitializeDeck();
 
+            HumanConsolePlayer player1 = new HumanConsolePlayer();
+            ComputerPlayer player2 = new ComputerPlayer();
+
             //test of game flow:
-            game.AddPlayer(new HumanConsolePlayer());
-            game.AddPlayer(new ComputerPlayer());
+            game.AddPlayer(player1);
+            game.AddPlayer(player2);
+            game.AddMoney(player1, 100);
+            game.AddMoney(player2, 100);
             game.PlaceBets();
             game.InitialDeal();
             game.PlayerTurns();
