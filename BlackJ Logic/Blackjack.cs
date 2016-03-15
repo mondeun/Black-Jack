@@ -102,13 +102,9 @@ namespace BlackJack
         {
             player.Hand.AddCard(deck.HandOutCard());
         }
-        public void PlaceBets()
+        public BetValidity PlaceBet(IPlayer player)
         {
-            foreach (IPlayer player in players)
-            {
-                bank.AddPlayerBet(player.Id, player.MakeBet());
-            }
-            bank.AddPlayerBet(dealer.Id, dealer.MakeBet());
+            return bank.AddPlayerBet(player.Id, player.MakeBet());
         }
     }
 }
