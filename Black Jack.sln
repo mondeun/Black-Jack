@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJ Logic", "BlackJ Logic\BlackJ Logic.csproj", "{DB7E0256-ECB8-4707-B8BE-7F3F9135B6F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJ", "BlackJ Logic\BlackJ.csproj", "{DB7E0256-ECB8-4707-B8BE-7F3F9135B6F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBlack Jack", "WinBlack Jack\WinBlack Jack.csproj", "{CBB6E5CD-8C9F-448B-934C-31986A96DF74}"
 EndProject
