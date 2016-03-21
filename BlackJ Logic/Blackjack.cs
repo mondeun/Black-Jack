@@ -29,8 +29,15 @@ namespace BlackJack
         {
             _bank = new Bank();
             Dealer = new Dealer();
-            _bank.AddMoneyToPlayer(Dealer.Id, dealerStartMoney);
             Players = new List<IPlayer>();
+
+            _bank.AddMoneyToPlayer(Dealer.Id, dealerStartMoney);
+
+        }
+
+        public Blackjack(List<IPlayer> playerList, int dealerStartMoney = 100) : this(dealerStartMoney)
+        {
+            Players.AddRange(playerList);
         }
 
         public void NewRound()
