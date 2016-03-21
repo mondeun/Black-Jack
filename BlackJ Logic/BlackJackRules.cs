@@ -67,5 +67,11 @@ namespace BlackJack.Players
             }
             return sum;
         }
+
+        public static bool Bust(Hand hand)
+        {
+            int handValue = GethandValue(hand);
+            return handValue > 21;
+        }
     }
 }
