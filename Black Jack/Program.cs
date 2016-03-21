@@ -27,7 +27,6 @@ namespace BlackJack
                 game.AddPlayer(player2,100);
                 //game.PlaceBet();
                 game.InitialDeal();
-                game.PlayerTurns();
             }
         }
     }
