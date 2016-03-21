@@ -87,7 +87,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlackJ Logic\BlackJ.csproj">
+    <ProjectReference Include="..\BlackJ\BlackJ.csproj">
       <Project>{db7e0256-ecb8-4707-b8be-7f3f9135b6f7}</Project>
       <Name>BlackJ</Name>
     </ProjectReference>
