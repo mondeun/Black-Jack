@@ -1,11 +1,7 @@
 # Black-Jack
 
-A console rendition of Black Jack
+A windows form game of Black Jack.
 
-Kenneth Glawe
+The console version which is based of the source from BlackJ Logic library can be found at https://github.com/ivanpx/Blackjack
 
-Ivan Prgomet
-
-Dalius Pamparas
-
-Johan 	Evertsson
+Project members: K.Glawe, I.Prgomet, D.Pamparas, J.Evertsson
