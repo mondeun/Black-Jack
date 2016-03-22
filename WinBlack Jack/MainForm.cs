@@ -25,5 +25,15 @@ namespace WinBlack_Jack
         {
 
         }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _blackjack.NewGame();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

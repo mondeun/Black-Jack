@@ -33,20 +33,20 @@
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.picBoxDealer2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picBoxDealer2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnStay = new System.Windows.Forms.Button();
+            this.btnHit = new System.Windows.Forms.Button();
+            this.btnBet = new System.Windows.Forms.Button();
+            this.txtBoxBet = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer2)).BeginInit();
@@ -87,97 +87,16 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newGameToolStripMenuItem.Text = "&New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
-            // 
-            // picBoxDealer2
-            // 
-            this.picBoxDealer2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.picBoxDealer2.Location = new System.Drawing.Point(407, 45);
-            this.picBoxDealer2.Name = "picBoxDealer2";
-            this.picBoxDealer2.Size = new System.Drawing.Size(117, 159);
-            this.picBoxDealer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxDealer2.TabIndex = 2;
-            this.picBoxDealer2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox1.Location = new System.Drawing.Point(215, 277);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox2.Location = new System.Drawing.Point(449, 277);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 159);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(257, 507);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Stay";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(449, 507);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Hit";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(356, 507);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Bet";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(356, 481);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 20);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 423);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Bet: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(372, 277);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Player #";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -217,6 +136,90 @@
             this.blueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.blueToolStripMenuItem.Text = "&Blue";
             // 
+            // picBoxDealer2
+            // 
+            this.picBoxDealer2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
+            this.picBoxDealer2.Location = new System.Drawing.Point(407, 45);
+            this.picBoxDealer2.Name = "picBoxDealer2";
+            this.picBoxDealer2.Size = new System.Drawing.Size(117, 159);
+            this.picBoxDealer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxDealer2.TabIndex = 2;
+            this.picBoxDealer2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
+            this.pictureBox1.Location = new System.Drawing.Point(215, 277);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
+            this.pictureBox2.Location = new System.Drawing.Point(449, 277);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(117, 159);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnStay
+            // 
+            this.btnStay.Location = new System.Drawing.Point(257, 507);
+            this.btnStay.Name = "btnStay";
+            this.btnStay.Size = new System.Drawing.Size(75, 23);
+            this.btnStay.TabIndex = 0;
+            this.btnStay.Text = "Stay";
+            this.btnStay.UseVisualStyleBackColor = true;
+            // 
+            // btnHit
+            // 
+            this.btnHit.Location = new System.Drawing.Point(449, 507);
+            this.btnHit.Name = "btnHit";
+            this.btnHit.Size = new System.Drawing.Size(75, 23);
+            this.btnHit.TabIndex = 1;
+            this.btnHit.Text = "Hit";
+            this.btnHit.UseVisualStyleBackColor = true;
+            // 
+            // btnBet
+            // 
+            this.btnBet.Location = new System.Drawing.Point(356, 507);
+            this.btnBet.Name = "btnBet";
+            this.btnBet.Size = new System.Drawing.Size(75, 23);
+            this.btnBet.TabIndex = 4;
+            this.btnBet.Text = "Bet";
+            this.btnBet.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxBet
+            // 
+            this.txtBoxBet.Location = new System.Drawing.Point(356, 481);
+            this.txtBoxBet.Name = "txtBoxBet";
+            this.txtBoxBet.Size = new System.Drawing.Size(75, 20);
+            this.txtBoxBet.TabIndex = 3;
+            this.txtBoxBet.Text = "0";
+            this.txtBoxBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(372, 423);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Bet: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(372, 277);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Player #";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,10 +228,10 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtBoxBet);
+            this.Controls.Add(this.btnBet);
+            this.Controls.Add(this.btnHit);
+            this.Controls.Add(this.btnStay);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picBoxDealer2);
@@ -261,10 +264,10 @@
         private System.Windows.Forms.PictureBox picBoxDealer2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnStay;
+        private System.Windows.Forms.Button btnHit;
+        private System.Windows.Forms.Button btnBet;
+        private System.Windows.Forms.TextBox txtBoxBet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
