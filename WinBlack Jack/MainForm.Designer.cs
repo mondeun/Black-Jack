@@ -28,41 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picBoxDealer1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.picBoxDealer2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnStay = new System.Windows.Forms.Button();
             this.btnHit = new System.Windows.Forms.Button();
             this.btnBet = new System.Windows.Forms.Button();
             this.txtBoxBet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).BeginInit();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxDealer2 = new System.Windows.Forms.PictureBox();
+            this.picBoxDealer1 = new System.Windows.Forms.PictureBox();
+            this.addPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picBoxDealer1
-            // 
-            this.picBoxDealer1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.picBoxDealer1.Location = new System.Drawing.Point(257, 45);
-            this.picBoxDealer1.Name = "picBoxDealer1";
-            this.picBoxDealer1.Size = new System.Drawing.Size(117, 159);
-            this.picBoxDealer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxDealer1.TabIndex = 0;
-            this.picBoxDealer1.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -79,17 +71,12 @@
             // 
             this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameToolStripMenuItem,
+            this.addPlayerToolStripMenuItem,
+            this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "&Game";
-            // 
-            // newGameToolStripMenuItem
-            // 
-            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newGameToolStripMenuItem.Text = "&New Game";
-            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -113,13 +100,13 @@
             this.greenToolStripMenuItem,
             this.blueToolStripMenuItem});
             this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.backgroundToolStripMenuItem.Text = "&Background";
             // 
             // redToolStripMenuItem
             // 
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.redToolStripMenuItem.Text = "&Red";
             // 
             // greenToolStripMenuItem
@@ -127,44 +114,14 @@
             this.greenToolStripMenuItem.Checked = true;
             this.greenToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.greenToolStripMenuItem.Text = "&Green";
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.blueToolStripMenuItem.Text = "&Blue";
-            // 
-            // picBoxDealer2
-            // 
-            this.picBoxDealer2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.picBoxDealer2.Location = new System.Drawing.Point(407, 45);
-            this.picBoxDealer2.Name = "picBoxDealer2";
-            this.picBoxDealer2.Size = new System.Drawing.Size(117, 159);
-            this.picBoxDealer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxDealer2.TabIndex = 2;
-            this.picBoxDealer2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox1.Location = new System.Drawing.Point(215, 277);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox2.Location = new System.Drawing.Point(449, 277);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 159);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // btnStay
             // 
@@ -220,6 +177,64 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Player #";
             // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Text = "&New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
+            this.pictureBox2.Location = new System.Drawing.Point(449, 277);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(117, 159);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
+            this.pictureBox1.Location = new System.Drawing.Point(215, 277);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBoxDealer2
+            // 
+            this.picBoxDealer2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
+            this.picBoxDealer2.Location = new System.Drawing.Point(407, 45);
+            this.picBoxDealer2.Name = "picBoxDealer2";
+            this.picBoxDealer2.Size = new System.Drawing.Size(117, 159);
+            this.picBoxDealer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxDealer2.TabIndex = 2;
+            this.picBoxDealer2.TabStop = false;
+            // 
+            // picBoxDealer1
+            // 
+            this.picBoxDealer1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
+            this.picBoxDealer1.Location = new System.Drawing.Point(257, 45);
+            this.picBoxDealer1.Name = "picBoxDealer1";
+            this.picBoxDealer1.Size = new System.Drawing.Size(117, 159);
+            this.picBoxDealer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxDealer1.TabIndex = 0;
+            this.picBoxDealer1.TabStop = false;
+            // 
+            // addPlayerToolStripMenuItem
+            // 
+            this.addPlayerToolStripMenuItem.Name = "addPlayerToolStripMenuItem";
+            this.addPlayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addPlayerToolStripMenuItem.Text = "&Add Player";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,27 +259,21 @@
             this.Text = "Black Jack";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picBoxDealer1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.PictureBox picBoxDealer2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnStay;
         private System.Windows.Forms.Button btnHit;
         private System.Windows.Forms.Button btnBet;
@@ -276,6 +285,13 @@
         private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addPlayerToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxDealer2;
+        private System.Windows.Forms.PictureBox picBoxDealer1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

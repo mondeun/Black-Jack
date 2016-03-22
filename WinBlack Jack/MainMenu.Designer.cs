@@ -112,7 +112,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainMenu";
-            this.Text = "MainMenu";
+            this.Text = "Black Jack";
             this.ResumeLayout(false);
             this.PerformLayout();
 

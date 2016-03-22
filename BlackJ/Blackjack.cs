@@ -35,9 +35,10 @@ namespace BlackJack
 
         }
 
-        public Blackjack(List<IPlayer> playerList, int dealerStartMoney = 100) : this(dealerStartMoney)
+        public Blackjack(List<IPlayer> playerList, Bank bank, int dealerStartMoney = 100) : this(dealerStartMoney)
         {
             Players.AddRange(playerList);
+            _bank = bank;
         }
 
         public void NewRound()
