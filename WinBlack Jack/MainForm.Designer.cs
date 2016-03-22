@@ -242,6 +242,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Black Jack";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

@@ -58,7 +58,8 @@ namespace WinBlack_Jack
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            _playerList.RemoveAt(listBoxAddedPlayers.SelectedIndex);
+            listBoxAddedPlayers.Items.RemoveAt(listBoxAddedPlayers.SelectedIndex);
         }
     }
 }

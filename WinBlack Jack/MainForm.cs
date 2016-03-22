@@ -8,17 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BlackJack;
+using BlackJack.Players;
 
 namespace WinBlack_Jack
 {
     public partial class MainForm : Form
     {
-        Blackjack _blackjack;
+        private Blackjack _blackjack;
+        private List<IPlayer> _playersToAdd; // Add new players at the end of round
 
         public MainForm()
         {
             InitializeComponent();
-            _blackjack = new Blackjack(100);
+            _blackjack = new Blackjack();
+            _playersToAdd = new List<IPlayer>();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -32,6 +35,11 @@ namespace WinBlack_Jack
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
