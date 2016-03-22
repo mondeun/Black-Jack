@@ -17,10 +17,10 @@ namespace WinBlack_Jack
         private Blackjack _blackjack;
         private List<IPlayer> _playersToAdd; // Add new players at the end of round
 
-        public MainForm()
+        public MainForm(List<IPlayer> playerList, Bank bank)
         {
             InitializeComponent();
-            _blackjack = new Blackjack();
+            _blackjack = new Blackjack(playerList, bank);
             _playersToAdd = new List<IPlayer>();
         }
 

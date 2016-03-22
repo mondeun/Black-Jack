@@ -26,7 +26,7 @@ namespace WinBlack_Jack
 
         private void btnstart_Click(object sender, EventArgs e)
         {
-            var main = new MainForm();
+            var main = new MainForm(_playerList, _bank);
             main.Show();
             Hide();
         }
