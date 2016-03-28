@@ -18,7 +18,7 @@ namespace BlackJack
     /// </summary>
     public class Blackjack
     {
-        private readonly Bank _bank;
+        private Bank _bank;
         private Deck _deck;
 
         public Dealer Dealer { get; private set; }
@@ -34,12 +34,6 @@ namespace BlackJack
 
             _bank.AddMoneyToPlayer(Dealer.Id, dealerStartMoney);
 
-        }
-
-        public Blackjack(List<IPlayer> playerList, Bank bank, int dealerStartMoney = 100) : this(dealerStartMoney)
-        {
-            Players.AddRange(playerList);
-            _bank = bank;
         }
 
         public void NewRound()
@@ -59,10 +53,19 @@ namespace BlackJack
             _bank.RemovePlayer(Dealer.Id);
         }
 
-        public void AddPlayer(IPlayer newPlayer, int startBalance=0)
+        public void AddPlayer(IPlayer newPlayer)
         {
             Players.Add(newPlayer);
-            _bank.AddMoneyToPlayer(newPlayer.Id, startBalance);
+        }
+
+        public bool RemovePlayer(IPlayer player)
+        {
+            if (Players.Remove(player))
+            {
+                _bank.RemovePlayer(player.Id);
+                return true;
+            }
+            return false;
         }
 
         public void AddMoney(IPlayer player,int playerMoney)
@@ -97,6 +100,10 @@ namespace BlackJack
         {
             return _bank.AddPlayerBet(player.Id, player.MakeBet());
         }
+
+        public int GetPlayerMoney(int pos) => _bank.GetPMoney(Players[pos].Id);
+
+        public int GetBet(Guid id) => Bank.GetPlayerBet(id);
 
         public string[] GetCardStrings() => _deck.GetCardStrings();
 

@@ -42,7 +42,7 @@
             this.btnAdd.Location = new System.Drawing.Point(12, 91);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -65,14 +65,14 @@
             this.listBoxAddedPlayers.Location = new System.Drawing.Point(28, 120);
             this.listBoxAddedPlayers.Name = "listBoxAddedPlayers";
             this.listBoxAddedPlayers.Size = new System.Drawing.Size(120, 95);
-            this.listBoxAddedPlayers.TabIndex = 2;
+            this.listBoxAddedPlayers.TabIndex = 6;
             // 
             // txtBoxMoney
             // 
             this.txtBoxMoney.Location = new System.Drawing.Point(39, 65);
             this.txtBoxMoney.Name = "txtBoxMoney";
             this.txtBoxMoney.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxMoney.TabIndex = 4;
+            this.txtBoxMoney.TabIndex = 3;
             this.txtBoxMoney.Text = "Money";
             this.txtBoxMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBoxMoney.Enter += new System.EventHandler(this.txtBoxMoney_Enter);
@@ -83,7 +83,7 @@
             this.btnRemove.Location = new System.Drawing.Point(93, 91);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 5;
+            this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -93,7 +93,7 @@
             this.btnstart.Location = new System.Drawing.Point(52, 221);
             this.btnstart.Name = "btnstart";
             this.btnstart.Size = new System.Drawing.Size(75, 23);
-            this.btnstart.TabIndex = 6;
+            this.btnstart.TabIndex = 5;
             this.btnstart.Text = "Start";
             this.btnstart.UseVisualStyleBackColor = true;
             this.btnstart.Click += new System.EventHandler(this.btnstart_Click);
@@ -103,7 +103,7 @@
             this.txtBoxName.Location = new System.Drawing.Point(39, 39);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxName.TabIndex = 7;
+            this.txtBoxName.TabIndex = 2;
             this.txtBoxName.Text = "Name";
             this.txtBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBoxName.Enter += new System.EventHandler(this.txtBoxName_Enter);

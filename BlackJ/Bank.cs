@@ -62,8 +62,13 @@ namespace BlackJack
             _bets.Clear();
         }
 
+        public int GetPMoney(Guid id) => _balance[id];
+
         public static int GetPlayerBet(Guid id) => _bets[id];
 
-        public static int GetPlayerMoney(Guid id) => _balance[id];
+        public static int GetPlayerMoney(Guid id)
+        {
+            return _balance.Count;
+        }
     }
 }

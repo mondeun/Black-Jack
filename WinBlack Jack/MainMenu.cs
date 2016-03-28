@@ -14,19 +14,24 @@ namespace WinBlack_Jack
 {
     public partial class MainMenu : Form
     {
-        private readonly List<IPlayer> _playerList;
-        private readonly Bank _bank;
+        private Blackjack _blackjack;
 
         public MainMenu()
         {
             InitializeComponent();
-            _playerList = new List<IPlayer>();
-            _bank = new Bank();
+
+            _blackjack = new Blackjack();
         }
 
         private void btnstart_Click(object sender, EventArgs e)
         {
-            var main = new MainForm(_playerList, _bank);
+            if (_blackjack.Players.Count == 0)
+            {
+                MessageBox.Show("Please add player(s)");
+                return;
+            }
+
+            var main = new MainForm(_blackjack);
             main.Show();
             Hide();
         }
@@ -74,8 +79,8 @@ namespace WinBlack_Jack
                     return;
             }
 
-            _playerList.Add(player);
-            _bank.AddMoneyToPlayer(player.Id, money);
+            _blackjack.AddPlayer(player);
+            _blackjack.AddMoney(player, money);
             listBoxAddedPlayers.Items.Add(txtBoxName.Text + " : " + comboBoxAddPlayer.Text);
             txtBoxName.Text = "Name";
             txtBoxMoney.Text = "Money";
@@ -85,8 +90,7 @@ namespace WinBlack_Jack
         {
             var index = listBoxAddedPlayers.SelectedIndex;
 
-            _bank.RemovePlayer(_playerList[index].Id);
-            _playerList.RemoveAt(index);
+            _blackjack.RemovePlayer(_blackjack.Players[index]);
             listBoxAddedPlayers.Items.RemoveAt(index);
         }
 

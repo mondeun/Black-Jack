@@ -59,6 +59,9 @@
             this.picBoxDealer6 = new System.Windows.Forms.PictureBox();
             this.picBoxDealer3 = new System.Windows.Forms.PictureBox();
             this.picBoxDealer5 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBoxHand = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer1)).BeginInit();
@@ -161,34 +164,37 @@
             // 
             // btnStay
             // 
-            this.btnStay.Location = new System.Drawing.Point(257, 507);
+            this.btnStay.Location = new System.Drawing.Point(356, 526);
             this.btnStay.Name = "btnStay";
             this.btnStay.Size = new System.Drawing.Size(75, 23);
             this.btnStay.TabIndex = 0;
             this.btnStay.Text = "Stay";
             this.btnStay.UseVisualStyleBackColor = true;
+            this.btnStay.Click += new System.EventHandler(this.btnStay_Click);
             // 
             // btnHit
             // 
-            this.btnHit.Location = new System.Drawing.Point(449, 507);
+            this.btnHit.Location = new System.Drawing.Point(469, 526);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(75, 23);
             this.btnHit.TabIndex = 1;
             this.btnHit.Text = "Hit";
             this.btnHit.UseVisualStyleBackColor = true;
+            this.btnHit.Click += new System.EventHandler(this.btnHit_Click);
             // 
             // btnBet
             // 
-            this.btnBet.Location = new System.Drawing.Point(356, 507);
+            this.btnBet.Location = new System.Drawing.Point(244, 526);
             this.btnBet.Name = "btnBet";
             this.btnBet.Size = new System.Drawing.Size(75, 23);
             this.btnBet.TabIndex = 4;
             this.btnBet.Text = "Bet";
             this.btnBet.UseVisualStyleBackColor = true;
+            this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
             // 
             // txtBoxBet
             // 
-            this.txtBoxBet.Location = new System.Drawing.Point(356, 481);
+            this.txtBoxBet.Location = new System.Drawing.Point(244, 481);
             this.txtBoxBet.Name = "txtBoxBet";
             this.txtBoxBet.Size = new System.Drawing.Size(75, 20);
             this.txtBoxBet.TabIndex = 3;
@@ -198,18 +204,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(381, 465);
+            this.label1.Location = new System.Drawing.Point(215, 484);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(23, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Bet: ";
+            this.label1.Text = "Bet";
             // 
             // lblPlayerName
             // 
             this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerName.Location = new System.Drawing.Point(375, 250);
             this.lblPlayerName.Name = "lblPlayerName";
-            this.lblPlayerName.Size = new System.Drawing.Size(46, 13);
+            this.lblPlayerName.Size = new System.Drawing.Size(54, 13);
             this.lblPlayerName.TabIndex = 10;
             this.lblPlayerName.Text = "Player #";
             // 
@@ -252,15 +259,16 @@
             // lblDealerName
             // 
             this.lblDealerName.AutoSize = true;
+            this.lblDealerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerName.Location = new System.Drawing.Point(378, 45);
             this.lblDealerName.Name = "lblDealerName";
-            this.lblDealerName.Size = new System.Drawing.Size(38, 13);
+            this.lblDealerName.Size = new System.Drawing.Size(44, 13);
             this.lblDealerName.TabIndex = 11;
             this.lblDealerName.Text = "Dealer";
             // 
             // txtBoxMoney
             // 
-            this.txtBoxMoney.Location = new System.Drawing.Point(356, 536);
+            this.txtBoxMoney.Location = new System.Drawing.Point(469, 481);
             this.txtBoxMoney.Name = "txtBoxMoney";
             this.txtBoxMoney.ReadOnly = true;
             this.txtBoxMoney.Size = new System.Drawing.Size(75, 20);
@@ -340,12 +348,43 @@
             this.picBoxDealer5.TabIndex = 20;
             this.picBoxDealer5.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(550, 484);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Money";
+            // 
+            // txtBoxHand
+            // 
+            this.txtBoxHand.Location = new System.Drawing.Point(356, 481);
+            this.txtBoxHand.Name = "txtBoxHand";
+            this.txtBoxHand.ReadOnly = true;
+            this.txtBoxHand.Size = new System.Drawing.Size(75, 20);
+            this.txtBoxHand.TabIndex = 22;
+            this.txtBoxHand.TabStop = false;
+            this.txtBoxHand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(375, 507);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Hand";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtBoxHand);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.picBoxDealer5);
             this.Controls.Add(this.picBoxDealer3);
             this.Controls.Add(this.picBoxDealer6);
@@ -425,6 +464,9 @@
         private System.Windows.Forms.PictureBox picBoxDealer6;
         private System.Windows.Forms.PictureBox picBoxDealer3;
         private System.Windows.Forms.PictureBox picBoxDealer5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBoxHand;
+        private System.Windows.Forms.Label label3;
     }
 }
 
