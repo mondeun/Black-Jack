@@ -14,11 +14,11 @@ namespace BlackJack
 
         public bool IsHidden { get; private set; }
 
-        public Card(string suite, int value)
+        public Card(string suite, int value, bool isHidden = false)
         {
             Suite = suite;
             Value = value;
-            IsHidden = false;
+            IsHidden = isHidden;
         }
 
         public void ToggleHidden()

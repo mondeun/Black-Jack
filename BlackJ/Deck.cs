@@ -18,30 +18,6 @@ namespace BlackJack
             Initialize();
         }
 
-        private void Initialize()
-        {
-            int count = 0;
-
-            for (int i = 0; i < 4; i++)
-            {
-                int value = 1;
-                for (int j = 0; j < 13; j++)
-                {
-                    if (i == 0)
-                        _cards[count] = new Card("♣", value);
-                    if (i == 1)
-                        _cards[count] = new Card("♦", value);
-                    if (i == 2)
-                        _cards[count] = new Card("♥", value);
-                    if (i == 3)
-                        _cards[count] = new Card("♠", value);
-
-                    value++;
-                    count++;
-                }
-            }
-        }
-
         public void Shuffle()
         {
             _index = 0;
@@ -49,6 +25,8 @@ namespace BlackJack
 
             for (int i = 0; i < _cards.Length; i++)
             {
+                if (_cards[i].IsHidden)
+                    _cards[i].ToggleHidden();
                 SwapCards(i, rnd.Next(_cards.Length));
             }
         }
@@ -73,6 +51,30 @@ namespace BlackJack
                 arr[i] = _cards[i].ToString();
             }
             return arr;
+        }
+
+        private void Initialize()
+        {
+            int count = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                int value = 1;
+                for (int j = 0; j < 13; j++)
+                {
+                    if (i == 0)
+                        _cards[count] = new Card("♣", value);
+                    if (i == 1)
+                        _cards[count] = new Card("♦", value);
+                    if (i == 2)
+                        _cards[count] = new Card("♥", value);
+                    if (i == 3)
+                        _cards[count] = new Card("♠", value);
+
+                    value++;
+                    count++;
+                }
+            }
         }
     }
 }

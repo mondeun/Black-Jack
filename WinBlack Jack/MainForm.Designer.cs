@@ -45,17 +45,33 @@
             this.txtBoxBet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPlayerName = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxPlayer2 = new System.Windows.Forms.PictureBox();
+            this.picBoxPlayer1 = new System.Windows.Forms.PictureBox();
             this.picBoxDealer2 = new System.Windows.Forms.PictureBox();
             this.picBoxDealer1 = new System.Windows.Forms.PictureBox();
             this.lblDealerName = new System.Windows.Forms.Label();
             this.txtBoxMoney = new System.Windows.Forms.TextBox();
+            this.picBoxPlayer4 = new System.Windows.Forms.PictureBox();
+            this.picBoxPlayer3 = new System.Windows.Forms.PictureBox();
+            this.picBoxPlayer6 = new System.Windows.Forms.PictureBox();
+            this.picBoxPlayer5 = new System.Windows.Forms.PictureBox();
+            this.picBoxDealer4 = new System.Windows.Forms.PictureBox();
+            this.picBoxDealer6 = new System.Windows.Forms.PictureBox();
+            this.picBoxDealer3 = new System.Windows.Forms.PictureBox();
+            this.picBoxDealer5 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer5)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -191,36 +207,33 @@
             // lblPlayerName
             // 
             this.lblPlayerName.AutoSize = true;
-            this.lblPlayerName.Location = new System.Drawing.Point(364, 251);
+            this.lblPlayerName.Location = new System.Drawing.Point(375, 250);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(46, 13);
             this.lblPlayerName.TabIndex = 10;
             this.lblPlayerName.Text = "Player #";
             // 
-            // pictureBox2
+            // picBoxPlayer2
             // 
-            this.pictureBox2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox2.Location = new System.Drawing.Point(407, 277);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(117, 159);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.picBoxPlayer2.Location = new System.Drawing.Point(399, 277);
+            this.picBoxPlayer2.Name = "picBoxPlayer2";
+            this.picBoxPlayer2.Size = new System.Drawing.Size(117, 159);
+            this.picBoxPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxPlayer2.TabIndex = 4;
+            this.picBoxPlayer2.TabStop = false;
             // 
-            // pictureBox1
+            // picBoxPlayer1
             // 
-            this.pictureBox1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox1.Location = new System.Drawing.Point(257, 277);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.picBoxPlayer1.Location = new System.Drawing.Point(276, 277);
+            this.picBoxPlayer1.Name = "picBoxPlayer1";
+            this.picBoxPlayer1.Size = new System.Drawing.Size(117, 159);
+            this.picBoxPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxPlayer1.TabIndex = 3;
+            this.picBoxPlayer1.TabStop = false;
             // 
             // picBoxDealer2
             // 
-            this.picBoxDealer2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.picBoxDealer2.Location = new System.Drawing.Point(407, 72);
+            this.picBoxDealer2.Location = new System.Drawing.Point(399, 72);
             this.picBoxDealer2.Name = "picBoxDealer2";
             this.picBoxDealer2.Size = new System.Drawing.Size(117, 159);
             this.picBoxDealer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -229,8 +242,7 @@
             // 
             // picBoxDealer1
             // 
-            this.picBoxDealer1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.picBoxDealer1.Location = new System.Drawing.Point(257, 72);
+            this.picBoxDealer1.Location = new System.Drawing.Point(276, 72);
             this.picBoxDealer1.Name = "picBoxDealer1";
             this.picBoxDealer1.Size = new System.Drawing.Size(117, 159);
             this.picBoxDealer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -240,7 +252,7 @@
             // lblDealerName
             // 
             this.lblDealerName.AutoSize = true;
-            this.lblDealerName.Location = new System.Drawing.Point(372, 41);
+            this.lblDealerName.Location = new System.Drawing.Point(378, 45);
             this.lblDealerName.Name = "lblDealerName";
             this.lblDealerName.Size = new System.Drawing.Size(38, 13);
             this.lblDealerName.TabIndex = 11;
@@ -256,12 +268,92 @@
             this.txtBoxMoney.TabStop = false;
             this.txtBoxMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // picBoxPlayer4
+            // 
+            this.picBoxPlayer4.Location = new System.Drawing.Point(522, 277);
+            this.picBoxPlayer4.Name = "picBoxPlayer4";
+            this.picBoxPlayer4.Size = new System.Drawing.Size(117, 159);
+            this.picBoxPlayer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxPlayer4.TabIndex = 13;
+            this.picBoxPlayer4.TabStop = false;
+            // 
+            // picBoxPlayer3
+            // 
+            this.picBoxPlayer3.Location = new System.Drawing.Point(153, 277);
+            this.picBoxPlayer3.Name = "picBoxPlayer3";
+            this.picBoxPlayer3.Size = new System.Drawing.Size(117, 159);
+            this.picBoxPlayer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxPlayer3.TabIndex = 14;
+            this.picBoxPlayer3.TabStop = false;
+            // 
+            // picBoxPlayer6
+            // 
+            this.picBoxPlayer6.Location = new System.Drawing.Point(645, 277);
+            this.picBoxPlayer6.Name = "picBoxPlayer6";
+            this.picBoxPlayer6.Size = new System.Drawing.Size(117, 159);
+            this.picBoxPlayer6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxPlayer6.TabIndex = 15;
+            this.picBoxPlayer6.TabStop = false;
+            // 
+            // picBoxPlayer5
+            // 
+            this.picBoxPlayer5.Location = new System.Drawing.Point(30, 277);
+            this.picBoxPlayer5.Name = "picBoxPlayer5";
+            this.picBoxPlayer5.Size = new System.Drawing.Size(117, 159);
+            this.picBoxPlayer5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxPlayer5.TabIndex = 16;
+            this.picBoxPlayer5.TabStop = false;
+            // 
+            // picBoxDealer4
+            // 
+            this.picBoxDealer4.Location = new System.Drawing.Point(522, 72);
+            this.picBoxDealer4.Name = "picBoxDealer4";
+            this.picBoxDealer4.Size = new System.Drawing.Size(117, 159);
+            this.picBoxDealer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxDealer4.TabIndex = 17;
+            this.picBoxDealer4.TabStop = false;
+            // 
+            // picBoxDealer6
+            // 
+            this.picBoxDealer6.Location = new System.Drawing.Point(645, 72);
+            this.picBoxDealer6.Name = "picBoxDealer6";
+            this.picBoxDealer6.Size = new System.Drawing.Size(117, 159);
+            this.picBoxDealer6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxDealer6.TabIndex = 18;
+            this.picBoxDealer6.TabStop = false;
+            // 
+            // picBoxDealer3
+            // 
+            this.picBoxDealer3.Location = new System.Drawing.Point(153, 72);
+            this.picBoxDealer3.Name = "picBoxDealer3";
+            this.picBoxDealer3.Size = new System.Drawing.Size(117, 159);
+            this.picBoxDealer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxDealer3.TabIndex = 19;
+            this.picBoxDealer3.TabStop = false;
+            // 
+            // picBoxDealer5
+            // 
+            this.picBoxDealer5.Location = new System.Drawing.Point(30, 72);
+            this.picBoxDealer5.Name = "picBoxDealer5";
+            this.picBoxDealer5.Size = new System.Drawing.Size(117, 159);
+            this.picBoxDealer5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxDealer5.TabIndex = 20;
+            this.picBoxDealer5.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.picBoxDealer5);
+            this.Controls.Add(this.picBoxDealer3);
+            this.Controls.Add(this.picBoxDealer6);
+            this.Controls.Add(this.picBoxDealer4);
+            this.Controls.Add(this.picBoxPlayer5);
+            this.Controls.Add(this.picBoxPlayer6);
+            this.Controls.Add(this.picBoxPlayer3);
+            this.Controls.Add(this.picBoxPlayer4);
             this.Controls.Add(this.txtBoxMoney);
             this.Controls.Add(this.lblDealerName);
             this.Controls.Add(this.lblPlayerName);
@@ -270,8 +362,8 @@
             this.Controls.Add(this.btnBet);
             this.Controls.Add(this.btnHit);
             this.Controls.Add(this.btnStay);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picBoxPlayer2);
+            this.Controls.Add(this.picBoxPlayer1);
             this.Controls.Add(this.picBoxDealer2);
             this.Controls.Add(this.picBoxDealer1);
             this.Controls.Add(this.menuStrip1);
@@ -284,10 +376,18 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayer5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDealer5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,13 +410,21 @@
         private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addPlayerToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxPlayer2;
+        private System.Windows.Forms.PictureBox picBoxPlayer1;
         private System.Windows.Forms.PictureBox picBoxDealer2;
         private System.Windows.Forms.PictureBox picBoxDealer1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label lblDealerName;
         private System.Windows.Forms.TextBox txtBoxMoney;
+        private System.Windows.Forms.PictureBox picBoxPlayer4;
+        private System.Windows.Forms.PictureBox picBoxPlayer3;
+        private System.Windows.Forms.PictureBox picBoxPlayer6;
+        private System.Windows.Forms.PictureBox picBoxPlayer5;
+        private System.Windows.Forms.PictureBox picBoxDealer4;
+        private System.Windows.Forms.PictureBox picBoxDealer6;
+        private System.Windows.Forms.PictureBox picBoxDealer3;
+        private System.Windows.Forms.PictureBox picBoxDealer5;
     }
 }
 

@@ -76,9 +76,9 @@ namespace BlackJack
             {
                 foreach (var player in Players)
                 {
-                    GiveCardTo(player, _deck);
+                    GiveCardTo(player);
                 }
-                GiveCardTo(Dealer, _deck);
+                GiveCardTo(Dealer);
             }
         }
 
@@ -88,9 +88,9 @@ namespace BlackJack
             return player.ProcessDecision(player.Hand);
         }
 
-        public void GiveCardTo(IPlayer player, Deck deck)
+        public void GiveCardTo(IPlayer player)
         {
-            player.Hand.AddCard(deck.HandOutCard());
+            player.Hand.AddCard(_deck.HandOutCard());
         }
 
         public BetValidity PlaceBet(IPlayer player)
@@ -102,7 +102,6 @@ namespace BlackJack
 
         private void InitializeDeck()
         {
-            _deck = new Deck();//initializes deck for every new round
             _deck.Shuffle();
         }
     }
