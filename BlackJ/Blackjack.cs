@@ -102,5 +102,7 @@ namespace BlackJack
         {
             return _bank.AddPlayerBet(player.Id, player.MakeBet());
         }
+
+        public string[] GetCardStrings() => _deck.GetCardStrings();
     }
 }

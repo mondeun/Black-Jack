@@ -62,7 +62,17 @@ namespace BlackJack
         
         public Card HandOutCard()
         {
-                return _cards[_index++ % 52];
+            return _cards[_index++ % 52];
+        }
+
+        public string[] GetCardStrings()
+        {
+            var arr = new string[52];
+            for (int i = 0; i < 52; i++)
+            {
+                arr[i] = _cards[i].ToString();
+            }
+            return arr;
         }
     }
 }
