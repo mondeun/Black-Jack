@@ -12,10 +12,13 @@ namespace BlackJack.Players
 
         public Hand Hand { get; }
 
+        public string Name { get; }
+
         public Dealer()
         {
             Id = Guid.NewGuid();
             Hand = new Hand();
+            Name = "Dealer";
         }
 
         public PlayerDecision ProcessDecision(Hand hand)

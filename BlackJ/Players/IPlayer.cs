@@ -12,6 +12,7 @@ namespace BlackJack.Players
 
         Hand Hand { get; }
 
+        string Name { get; }
 
         int MakeBet();
 

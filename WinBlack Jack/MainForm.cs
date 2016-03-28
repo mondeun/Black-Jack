@@ -28,7 +28,7 @@ namespace WinBlack_Jack
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            picBoxDealer1.Image = _cardMapper.GetBitmap("7♥");
+            picBoxDealer1.Image = _cardMapper.GetCardBitmap("7♥");
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)

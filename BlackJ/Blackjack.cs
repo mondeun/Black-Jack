@@ -70,12 +70,6 @@ namespace BlackJack
             _bank.AddMoneyToPlayer(player.Id, playerMoney);
         }
 
-        public void InitializeDeck()
-        {
-            _deck = new Deck();//initializes deck for every new round
-            _deck.Shuffle();
-        }
-
         public void InitialDeal()
         {
             for (int i = 0; i < 2; i++)
@@ -105,5 +99,11 @@ namespace BlackJack
         }
 
         public string[] GetCardStrings() => _deck.GetCardStrings();
+
+        private void InitializeDeck()
+        {
+            _deck = new Deck();//initializes deck for every new round
+            _deck.Shuffle();
+        }
     }
 }

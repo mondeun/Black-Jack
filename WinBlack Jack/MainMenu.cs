@@ -47,6 +47,12 @@ namespace WinBlack_Jack
         {
             var money = 0;
 
+            if (txtBoxName.Text == "Name")
+            {
+                MessageBox.Show("Enter a name please");
+                return;
+            }
+
             if (!int.TryParse(txtBoxMoney.Text, out money))
             {
                 MessageBox.Show("Please enter starting money");
@@ -61,7 +67,7 @@ namespace WinBlack_Jack
                     player = new Dealer(); // TODO Implement human player
                     break;
                 case "Computer":
-                    player = new ComputerPlayer();
+                    player = new ComputerPlayer(txtBoxName.Text);
                     break;
                 default:
                     MessageBox.Show("Select player");
@@ -70,7 +76,8 @@ namespace WinBlack_Jack
 
             _playerList.Add(player);
             _bank.AddMoneyToPlayer(player.Id, money);
-            listBoxAddedPlayers.Items.Add(comboBoxAddPlayer.Text);
+            listBoxAddedPlayers.Items.Add(txtBoxName.Text + " : " + comboBoxAddPlayer.Text);
+            txtBoxName.Text = "Name";
             txtBoxMoney.Text = "Money";
         }
 
@@ -81,6 +88,18 @@ namespace WinBlack_Jack
             _bank.RemovePlayer(_playerList[index].Id);
             _playerList.RemoveAt(index);
             listBoxAddedPlayers.Items.RemoveAt(index);
+        }
+
+        private void txtBoxName_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxName.Text == "Name")
+                txtBoxName.Text = string.Empty;
+        }
+
+        private void txtBoxName_Leave(object sender, EventArgs e)
+        {
+            if (txtBoxName.Text.Length == 0)
+                txtBoxName.Text = "Name";
         }
     }
 }

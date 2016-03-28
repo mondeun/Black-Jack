@@ -30,6 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,14 +44,13 @@
             this.btnBet = new System.Windows.Forms.Button();
             this.txtBoxBet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblPlayerName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxDealer2 = new System.Windows.Forms.PictureBox();
             this.picBoxDealer1 = new System.Windows.Forms.PictureBox();
-            this.addPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblDealerName = new System.Windows.Forms.Label();
+            this.txtBoxMoney = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,10 +80,28 @@
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "&Game";
             // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.newGameToolStripMenuItem.Text = "&New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // addPlayerToolStripMenuItem
+            // 
+            this.addPlayerToolStripMenuItem.Name = "addPlayerToolStripMenuItem";
+            this.addPlayerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.addPlayerToolStripMenuItem.Text = "&Add Player";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -162,32 +182,25 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 423);
+            this.label1.Location = new System.Drawing.Point(381, 465);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Bet: ";
             // 
-            // label2
+            // lblPlayerName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(372, 277);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Player #";
-            // 
-            // newGameToolStripMenuItem
-            // 
-            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newGameToolStripMenuItem.Text = "&New Game";
-            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.Location = new System.Drawing.Point(364, 251);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(46, 13);
+            this.lblPlayerName.TabIndex = 10;
+            this.lblPlayerName.Text = "Player #";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox2.Location = new System.Drawing.Point(449, 277);
+            this.pictureBox2.Location = new System.Drawing.Point(407, 277);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(117, 159);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -197,7 +210,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.pictureBox1.Location = new System.Drawing.Point(215, 277);
+            this.pictureBox1.Location = new System.Drawing.Point(257, 277);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(117, 159);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,7 +220,7 @@
             // picBoxDealer2
             // 
             this.picBoxDealer2.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.picBoxDealer2.Location = new System.Drawing.Point(407, 45);
+            this.picBoxDealer2.Location = new System.Drawing.Point(407, 72);
             this.picBoxDealer2.Name = "picBoxDealer2";
             this.picBoxDealer2.Size = new System.Drawing.Size(117, 159);
             this.picBoxDealer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,23 +230,31 @@
             // picBoxDealer1
             // 
             this.picBoxDealer1.Image = global::WinBlack_Jack.Properties.Resources.jack_hearts;
-            this.picBoxDealer1.Location = new System.Drawing.Point(257, 45);
+            this.picBoxDealer1.Location = new System.Drawing.Point(257, 72);
             this.picBoxDealer1.Name = "picBoxDealer1";
             this.picBoxDealer1.Size = new System.Drawing.Size(117, 159);
             this.picBoxDealer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxDealer1.TabIndex = 0;
             this.picBoxDealer1.TabStop = false;
             // 
-            // addPlayerToolStripMenuItem
+            // lblDealerName
             // 
-            this.addPlayerToolStripMenuItem.Name = "addPlayerToolStripMenuItem";
-            this.addPlayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addPlayerToolStripMenuItem.Text = "&Add Player";
+            this.lblDealerName.AutoSize = true;
+            this.lblDealerName.Location = new System.Drawing.Point(372, 41);
+            this.lblDealerName.Name = "lblDealerName";
+            this.lblDealerName.Size = new System.Drawing.Size(38, 13);
+            this.lblDealerName.TabIndex = 11;
+            this.lblDealerName.Text = "Dealer";
             // 
-            // toolStripSeparator1
+            // txtBoxMoney
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.txtBoxMoney.Location = new System.Drawing.Point(356, 536);
+            this.txtBoxMoney.Name = "txtBoxMoney";
+            this.txtBoxMoney.ReadOnly = true;
+            this.txtBoxMoney.Size = new System.Drawing.Size(75, 20);
+            this.txtBoxMoney.TabIndex = 12;
+            this.txtBoxMoney.TabStop = false;
+            this.txtBoxMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 
@@ -241,7 +262,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBoxMoney);
+            this.Controls.Add(this.lblDealerName);
+            this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxBet);
             this.Controls.Add(this.btnBet);
@@ -279,7 +302,7 @@
         private System.Windows.Forms.Button btnBet;
         private System.Windows.Forms.TextBox txtBoxBet;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
@@ -292,6 +315,8 @@
         private System.Windows.Forms.PictureBox picBoxDealer2;
         private System.Windows.Forms.PictureBox picBoxDealer1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label lblDealerName;
+        private System.Windows.Forms.TextBox txtBoxMoney;
     }
 }
 

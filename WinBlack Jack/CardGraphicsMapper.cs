@@ -11,22 +11,18 @@ namespace WinBlack_Jack
     public class CardGraphicsMapper
     {
         private readonly Dictionary<string, Bitmap> _cardDictionary;
-
+        
         public CardGraphicsMapper(string[] cardStrings)
         {
             _cardDictionary = new Dictionary<string, Bitmap>();
-            Map(cardStrings);
-        }
 
-        private void Map(string[] cardStrings)
-        {
             for (int i = 0; i < cardStrings.Length; i++)
             {
                 _cardDictionary.Add(cardStrings[i], new Bitmap(@"Cards/" + (i + 1) + ".png"));
             }
         }
 
-        public Bitmap GetBitmap(string card)
+        public Bitmap GetCardBitmap(string card)
         {
             return _cardDictionary.ContainsKey(card) ? _cardDictionary[card] : null;
         }
