@@ -30,6 +30,7 @@ namespace BlackJack
             _bank = new Bank();
             Dealer = new Dealer();
             Players = new List<IPlayer>();
+            _deck = new Deck();
 
             _bank.AddMoneyToPlayer(Dealer.Id, dealerStartMoney);
 

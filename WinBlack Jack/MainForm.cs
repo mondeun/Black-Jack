@@ -23,7 +23,7 @@ namespace WinBlack_Jack
             InitializeComponent();
             _blackjack = new Blackjack(playerList, bank);
             _playersToAdd = new List<IPlayer>();
-            _cardMapper = new CardGraphicsMapper();
+            _cardMapper = new CardGraphicsMapper(_blackjack.GetCardStrings());
         }
 
         private void MainForm_Load(object sender, EventArgs e)
