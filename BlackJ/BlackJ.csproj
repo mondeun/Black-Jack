@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bank.cs" />
     <Compile Include="Blackjack.cs" />
     <Compile Include="BlackJackRules.cs" />
     <Compile Include="Card.cs" />

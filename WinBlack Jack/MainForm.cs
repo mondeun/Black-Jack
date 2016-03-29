@@ -34,7 +34,7 @@ namespace WinBlack_Jack
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _blackjack.NewRound();
+            NewRound();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,53 +52,42 @@ namespace WinBlack_Jack
             _blackjack.NewRound();
             _blackjack.InitialDeal();
 
-            _currentPlayerPos = 0;
-
-            lblPlayerName.Text = _blackjack.Players[_currentPlayerPos].Name;
+            lblPlayerName.Text = GetPlayer(_currentPlayerPos).Name;
 
             UpdateDealerCardPictures();
-            NextPlayerTurn(_blackjack.Players[_currentPlayerPos]);
+            NextPlayerTurn(GetPlayer(_currentPlayerPos));
         }
 
         private void NextPlayerTurn(IPlayer player)
         {
             UpdatePlayerCardPictures(player);
             txtBoxHand.Text = BlackJackRules.GethandValue(player.Hand).ToString();
+            lblPlayerName.Text = player.Name;
             txtBoxMoney.Text = player.Balance.ToString();
         }
 
         private void UpdatePlayerCardPictures(IPlayer player)
         {
-            picBoxPlayer1.Image = _cardMapper.GetCardBitmap(player.Hand.Cards[0].ToString());
-            picBoxPlayer2.Image = _cardMapper.GetCardBitmap(player.Hand.Cards[1].ToString());
-
             var nrOfCards = player.Hand.Cards.Count;
 
-            if (nrOfCards >= 3)
-                picBoxPlayer3.Image = _cardMapper.GetCardBitmap(player.Hand.Cards[2].ToString());
-            if (nrOfCards >= 4)
-                picBoxPlayer4.Image = _cardMapper.GetCardBitmap(player.Hand.Cards[3].ToString());
-            if (nrOfCards >= 5)
-                picBoxPlayer5.Image = _cardMapper.GetCardBitmap(player.Hand.Cards[4].ToString());
-            if (nrOfCards >= 6)
-                picBoxPlayer6.Image = _cardMapper.GetCardBitmap(player.Hand.Cards[5].ToString());
+            picBoxPlayer1.Image = nrOfCards >= 1 ? _cardMapper.GetCardBitmap(player.Hand.Cards[0].ToString()) : null;
+            picBoxPlayer2.Image = nrOfCards >= 2 ? _cardMapper.GetCardBitmap(player.Hand.Cards[1].ToString()) : null;
+            picBoxPlayer3.Image = nrOfCards >= 3 ? _cardMapper.GetCardBitmap(player.Hand.Cards[2].ToString()) : null;
+            picBoxPlayer4.Image = nrOfCards >= 4 ? _cardMapper.GetCardBitmap(player.Hand.Cards[3].ToString()) : null;
+            picBoxPlayer5.Image = nrOfCards >= 5 ? _cardMapper.GetCardBitmap(player.Hand.Cards[4].ToString()) : null;
+            picBoxPlayer6.Image = nrOfCards >= 6 ? _cardMapper.GetCardBitmap(player.Hand.Cards[5].ToString()) : null;
         }
 
         private void UpdateDealerCardPictures()
         {
-            picBoxDealer1.Image = _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[0].ToString());
-            picBoxDealer2.Image = _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[1].ToString());
-
             var nrOfCards = _blackjack.Dealer.Hand.Cards.Count;
 
-            if(nrOfCards >= 3)
-                picBoxDealer3.Image = _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[2].ToString());
-            if (nrOfCards >= 4)
-                picBoxDealer4.Image = _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[3].ToString());
-            if (nrOfCards >= 5)
-                picBoxDealer5.Image = _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[4].ToString());
-            if (nrOfCards >= 6)
-                picBoxDealer6.Image = _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[5].ToString());
+            picBoxDealer1.Image = nrOfCards >= 1 ? _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[0].ToString()) : null;
+            picBoxDealer2.Image = nrOfCards >= 2 ? _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[1].ToString()) : null;
+            picBoxDealer3.Image = nrOfCards >= 3 ? _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[2].ToString()) : null;
+            picBoxDealer4.Image = nrOfCards >= 4 ? _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[3].ToString()) : null;
+            picBoxDealer5.Image = nrOfCards >= 5 ? _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[4].ToString()) : null;
+            picBoxDealer6.Image = nrOfCards >= 6 ? _cardMapper.GetCardBitmap(_blackjack.Dealer.Hand.Cards[5].ToString()) : null;
         }
 
         private void btnBet_Click(object sender, EventArgs e)
