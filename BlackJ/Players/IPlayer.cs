@@ -14,8 +14,10 @@ namespace BlackJack.Players
 
         string Name { get; }
 
-        int MakeBet();
+        int Balance { get; }
 
-        PlayerDecision ProcessDecision(Hand hand);
+        int MakeBet(int bet = 0);
+
+        PlayerDecision ProcessDecision(int bet);
     }
 }

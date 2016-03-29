@@ -69,10 +69,10 @@ namespace WinBlack_Jack
             switch (comboBoxAddPlayer.Text)
             {
                 case "Human":
-                    player = new Dealer(); // TODO Implement human player
+                    player = new HumanPlayer(txtBoxName.Text, money);
                     break;
                 case "Computer":
-                    player = new ComputerPlayer(txtBoxName.Text);
+                    player = new ComputerPlayer(txtBoxName.Text, money);
                     break;
                 default:
                     MessageBox.Show("Select player");
@@ -80,7 +80,6 @@ namespace WinBlack_Jack
             }
 
             _blackjack.AddPlayer(player);
-            _blackjack.AddMoney(player, money);
             listBoxAddedPlayers.Items.Add(txtBoxName.Text + " : " + comboBoxAddPlayer.Text);
             txtBoxName.Text = "Name";
             txtBoxMoney.Text = "Money";

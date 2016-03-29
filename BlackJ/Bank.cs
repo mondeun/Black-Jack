@@ -5,15 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BlackJack
-{
-    public enum BetValidity
-    {
-        NotEnoughMoney,
-        BetTooHigh,
-        InvalidBet,
-        Ok
-    }
-
+{/*
     public class Bank
     {
         private static Dictionary<Guid, int> _bets;
@@ -70,5 +62,5 @@ namespace BlackJack
         {
             return _balance.Count;
         }
-    }
+    }*/
 }

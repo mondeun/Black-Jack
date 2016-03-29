@@ -31,14 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStay = new System.Windows.Forms.Button();
             this.btnHit = new System.Windows.Forms.Button();
             this.btnBet = new System.Windows.Forms.Button();
@@ -80,8 +74,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameToolStripMenuItem,
-            this.optionsToolStripMenuItem});
+            this.gameToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -92,7 +85,6 @@
             // 
             this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameToolStripMenuItem,
-            this.addPlayerToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
@@ -106,12 +98,6 @@
             this.newGameToolStripMenuItem.Text = "&New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
-            // addPlayerToolStripMenuItem
-            // 
-            this.addPlayerToolStripMenuItem.Name = "addPlayerToolStripMenuItem";
-            this.addPlayerToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.addPlayerToolStripMenuItem.Text = "&Add Player";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -124,46 +110,9 @@
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backgroundToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "&Options";
-            // 
-            // backgroundToolStripMenuItem
-            // 
-            this.backgroundToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.redToolStripMenuItem,
-            this.greenToolStripMenuItem,
-            this.blueToolStripMenuItem});
-            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.backgroundToolStripMenuItem.Text = "&Background";
-            // 
-            // redToolStripMenuItem
-            // 
-            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.redToolStripMenuItem.Text = "&Red";
-            // 
-            // greenToolStripMenuItem
-            // 
-            this.greenToolStripMenuItem.Checked = true;
-            this.greenToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.greenToolStripMenuItem.Text = "&Green";
-            // 
-            // blueToolStripMenuItem
-            // 
-            this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.blueToolStripMenuItem.Text = "&Blue";
-            // 
             // btnStay
             // 
+            this.btnStay.Enabled = false;
             this.btnStay.Location = new System.Drawing.Point(356, 526);
             this.btnStay.Name = "btnStay";
             this.btnStay.Size = new System.Drawing.Size(75, 23);
@@ -174,6 +123,7 @@
             // 
             // btnHit
             // 
+            this.btnHit.Enabled = false;
             this.btnHit.Location = new System.Drawing.Point(469, 526);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(75, 23);
@@ -442,13 +392,7 @@
         private System.Windows.Forms.TextBox txtBoxBet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPlayerName;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addPlayerToolStripMenuItem;
         private System.Windows.Forms.PictureBox picBoxPlayer2;
         private System.Windows.Forms.PictureBox picBoxPlayer1;
         private System.Windows.Forms.PictureBox picBoxDealer2;

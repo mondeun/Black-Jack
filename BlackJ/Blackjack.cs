@@ -13,44 +13,39 @@ namespace BlackJack
         Stay
     }
 
+    public enum BetValidity
+    {
+        NotEnoughMoney,
+        BetTooHigh,
+        InvalidBet,
+        Ok
+    }
+
     /// <summary>
     /// external API to handle a game of blackjack
     /// </summary>
     public class Blackjack
     {
-        private Bank _bank;
         private Deck _deck;
+
+        private Dictionary<Guid, int> _bets;
 
         public Dealer Dealer { get; private set; }
 
         public List<IPlayer> Players { get; private set; }
 
-        public Blackjack(int dealerStartMoney = 100)
+        public Blackjack()
         {
-            _bank = new Bank();
             Dealer = new Dealer();
             Players = new List<IPlayer>();
             _deck = new Deck();
-
-            _bank.AddMoneyToPlayer(Dealer.Id, dealerStartMoney);
-
+            _bets = new Dictionary<Guid, int>();
         }
 
         public void NewRound()
         {
-            _bank.ClearBets();
+            _bets.Clear();
             InitializeDeck();
-        }
-
-        public void NewGame()
-        {
-            NewRound();
-
-            foreach (IPlayer player in Players)
-            {
-                _bank.RemovePlayer(player.Id);
-            }
-            _bank.RemovePlayer(Dealer.Id);
         }
 
         public void AddPlayer(IPlayer newPlayer)
@@ -62,15 +57,10 @@ namespace BlackJack
         {
             if (Players.Remove(player))
             {
-                _bank.RemovePlayer(player.Id);
+                _bets.Remove(player.Id);
                 return true;
             }
             return false;
-        }
-
-        public void AddMoney(IPlayer player,int playerMoney)
-        {
-            _bank.AddMoneyToPlayer(player.Id, playerMoney);
         }
 
         public void InitialDeal()
@@ -84,26 +74,34 @@ namespace BlackJack
                 GiveCardTo(Dealer);
             }
         }
-
+        /*
         public PlayerDecision PlayerTurn(IPlayer player)
         {
             // TODO Add players turn handling
-            return player.ProcessDecision(player.Hand);
+            return player.ProcessDecision();
         }
-
+        */
         public void GiveCardTo(IPlayer player)
         {
             player.Hand.AddCard(_deck.HandOutCard());
         }
 
-        public BetValidity PlaceBet(IPlayer player)
+        public BetValidity PlaceBet(IPlayer player, int bet)
         {
-            return _bank.AddPlayerBet(player.Id, player.MakeBet());
+            // We only add new bets and won't allow changes to existing bets
+            if (_bets.ContainsKey(player.Id))
+                return BetValidity.InvalidBet;
+
+            if (player.Balance <= 0)
+                return BetValidity.NotEnoughMoney;
+
+            if (player.Balance < bet)
+                return BetValidity.BetTooHigh;
+
+            _bets.Add(player.Id, bet);
+
+            return BetValidity.Ok;
         }
-
-        public int GetPlayerMoney(int pos) => _bank.GetPMoney(Players[pos].Id);
-
-        public int GetBet(Guid id) => Bank.GetPlayerBet(id);
 
         public string[] GetCardStrings() => _deck.GetCardStrings();
 

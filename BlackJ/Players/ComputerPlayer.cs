@@ -14,51 +14,39 @@ namespace BlackJack.Players
 
         public string Name { get; }
 
-        public ComputerPlayer(string name)
+        public int Balance { get; private set; }
+
+        public ComputerPlayer(string name, int money)
         {
             Id = Guid.NewGuid();
             Hand = new Hand();
             Name = name;
+            Balance = money;
         }
 
-        public PlayerDecision ProcessDecision(Hand hand)
+        public PlayerDecision ProcessDecision(int bet)
         {
-            /*
-            TODO: decide if Hand parameter is 
-            neccessary
-
-            ComputerPlayer betting-logic is 
-            based on bet amount and Hand value:
-            */
             var handValue = BlackJackRules.GethandValue(Hand);
 
-            if (Bank.GetPlayerBet(Id) > 7)
+            if (bet > 7)
             {
-                if (handValue > 16)
-                    return PlayerDecision.Stay;
-                else
-                    return PlayerDecision.Hit;
+                return handValue > 16 ? PlayerDecision.Stay : PlayerDecision.Hit;
             }
-            else
-            {
-                if (handValue > 18)
-                    return PlayerDecision.Stay;
-                else
-                    return PlayerDecision.Hit;
-            }
+
+            return handValue > 18 ? PlayerDecision.Stay : PlayerDecision.Hit;
         }
 
-        public int MakeBet()
+        public int MakeBet(int bet = 0)
         {
-            var cash = Bank.GetPlayerMoney(Id);
+            if (Balance <= 20)
+                bet = 2;
+            else if (Balance <= 50)
+                bet =  7;
+            else if (Balance <= 100)
+                bet = 10;
 
-            if (cash <= 20)
-                return 2;
-            if (cash <= 50)
-                return 7;
-            if (cash <= 100)
-                return 10;
-            return 10;
+            Balance -= bet;
+            return bet;
         }
     }
 }
